@@ -16,3 +16,18 @@
 .color-dark {
     color: #000000;
 }
+
+body {
+    background-color: #7e7e7e;
+}
+
+header,
+footer {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+main {
+    color: #000000;
+    background-color: #ffffff;
+}
