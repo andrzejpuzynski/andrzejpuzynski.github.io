@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box;
 }
 
 .color-bright {
@@ -30,4 +31,192 @@ footer {
 main {
     color: #000000;
     background-color: #ffffff;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    font-size: 1.6em;
+    font-weight: 400;
+    z-index: 100;
+    /*display: none;*/
+}
+
+.navigation-contener {
+    position: relative;
+}
+
+.navigation-logo {
+    position: absolute;
+    left: 10px;
+}
+
+.navigation-logo > a {
+    color: #7e7e7e;
+    text-decoration: none;
+}
+
+.navigation-logo > a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navigation-buttons {
+    position: absolute;
+    right: 10px;
+}
+
+.navigation-buttons > ul > li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navigation-buttons > ul > li > a {
+    color: #7e7e7e;
+    text-decoration: none;
+}
+
+.navigation-buttons > ul > li > a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.content {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4.6em;
+}
+
+#intro,
+#about-me,
+#portfolio,
+#contact-me {
+    min-height: 100vh;
+    padding: 3em 6em 0 6em;
+    position: relative;
+}
+
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.intro > h1,
+.intro > h2 {
+    font-size: 4.5em;
+    font-weight: 200;
+    text-align: center;
+}
+
+.about-me > h2,
+.portfolio > h2,
+.contact-me > h2 {
+    font-size: 4.5em;
+    font-weight: 200;
+    text-align: center;
+    margin: 1em 0 1em 0;
+}
+
+.about-me > h3 {
+    font-size: 2.4em;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.about-me > p,
+.about-me > ul > li {
+    font-size: 2.4em;
+    font-weight: 200;
+}
+
+.about-me > p {
+    text-align: center;
+}
+
+.about-me > ul > li {
+    text-align: left;
+}
+
+.portfolio > ul > li {
+    list-style: none;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.portfolio > ul > li > a {
+    font-size: 2.4em;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.portfolio > ul > li > p {
+    font-size: 2.4em;
+    font-weight: 200;
+}
+
+.contact-me > form > input,
+.contact-me > form > textarea,
+.contact-me > form > button{
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: #7e7e7e;
+    border-style: solid;
+    border-radius: 0.4em;
+    font-size: 2.4em;
+    font-weight: 200;
+    line-height: 1.4em;
+    margin-bottom: 0.8em;
+}
+
+.contact-me > form > input {
+    height: 1.4em;
+    width: 100%;
+    text-align: left;
+    padding-left: 0.4em;
+}
+
+.contact-me > form > textarea {
+    width: 100%;
+    text-align: left;
+    padding-left: 0.4em;
+}
+.contact-me > form > button {
+    text-align: center;
+    padding: 0 0.4em;
+    display: inline-block;
+}
+
+.footer-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4em;
+    line-height: 1.2em;
+    font-size: 1.2em;
+    font-weight: 200;
+    text-align: center;
+    z-index: 100;
+}
+
+.footer-bar-contener > ul > li {
+    display: inline-block;
+    margin: 0 0.5em 0 0.5em;
+    line-height: 2em;
+    text-align: center;
+}
+
+.footer-bar-contener > p {
+    font-size: 0.8em;
+    font-weight: 100;
+    text-align: center;
 }

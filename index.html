@@ -9,10 +9,10 @@
 
 <body>
 
-<header>
-    <div>
-        <p>Andrzej Puzynski logo</p>
-        <nav>
+<header class="navigation">
+    <div class="navigation-contener">
+        <p class="navigation-logo"><a href="#intro">Andrzej Puzyński logo</a></p>
+        <nav class="navigation-buttons">
             <ul>
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#portfolio">My Portfolio</a></li>
@@ -22,14 +22,15 @@
     </div>
 </header>
 
-<main>
+<main class="content">
     <section id="intro">
-        <h1>ANDRZEJ PUZYNSKI</h1>
-        <h2>Portfolio</h2>
-        <hr>
+        <div class="intro">
+            <h1>ANDRZEJ PUZYŃSKI</h1>
+            <h2>Portfolio</h2>
+        </div>
     </section>
 
-    <section id="about-me">
+    <section id="about-me" class="about-me">
         <h2>ABOUT ME</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         <h3>Experience</h3>
@@ -52,40 +53,59 @@
             <li>Lorem ipsum: 80%.</li>
             <li>Lorem ipsum: 90%.</li>
         </ul>
-        <hr>
     </section>
 
-    <section id="portfolio">
+    <section id="portfolio" class="portfolio">
         <h2>MY PORTFOLIO</h2>
         <ul>
-            <li><a href="http://dreamers.jfdz6.is-academy.pl/index.html">Dreamers site Page</a></li>
-            <li><a href="https://andrzejpuzynski.github.io">My Portfolio Page</a></li>
-            <li>Szortal Wydanie Specjalne site Page</li>
-            <li><a href="http://www.szortal.com/nawynos">Szortal Na Wynos - eBooks</a></li>
-            <li>Books</li>
-            <li>Notes</li>
+            <li>
+                <a href="http://dreamers.jfdz6.is-academy.pl/index.html">Dreamers site Page</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam magnam maiores nostrum quaerat sapiente. Ad deleniti itaque libero quibusdam soluta.</p>
+            </li>
+            <li>
+                <a href="https://andrzejpuzynski.github.io">My Portfolio Page</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam magnam maiores nostrum quaerat sapiente. Ad deleniti itaque libero quibusdam soluta.</p>
+            </li>
+            <li>
+                <a>Szortal Wydanie Specjalne site Page.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam magnam maiores nostrum quaerat sapiente. Ad deleniti itaque libero quibusdam soluta.</p>
+            </li>
+            <li>
+                <a href="http://www.szortal.com/nawynos">Szortal Na Wynos - eBooks</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam magnam maiores nostrum quaerat sapiente. Ad deleniti itaque libero quibusdam soluta.</p>
+            </li>
+            <li>
+                <a>Books.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam magnam maiores nostrum quaerat sapiente. Ad deleniti itaque libero quibusdam soluta.</p>
+            </li>
+            <li>
+                <a>Notes</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam magnam maiores nostrum quaerat sapiente. Ad deleniti itaque libero quibusdam soluta.</p>
+            </li>
         </ul>
-        <hr>
     </section>
 
-    <section id="contact-me">
+    <section id="contact-me" class="contact-me">
         <h2>CONTACT ME</h2>
-        <p>Your Name:</p>
-        <p>Your email:</p>
-        <p>Your message:</p>
-        <p><a href="#intro">Send message</a></p>
-        <hr>
+        <form>
+            <input type="text" name="firstname" id="firstname" placeholder="Your name" required="">
+            <input type="text" name="email" id="email" placeholder="Your e-mail" required="">
+            <textarea rows="4" name="message" id="message" placeholder="Your message" required=""></textarea>
+            <button id="submitButton" value="send">Send message</button>
+         </form>
     </section>
 
 </main>
 
-<footer>
-    <ul>
-        <li>Github icon</li>
-        <li>LinkedIn logo</li>
-        <li>Facebook Logo</li>
-    </ul>
-    <p>© Andrzej Puzyński 2017</p>
+<footer class="footer-bar">
+    <div class="footer-bar-contener">
+        <ul>
+            <li>Github icon</li>
+            <li>LinkedIn logo</li>
+            <li>Facebook Logo</li>
+        </ul>
+        <p>© Andrzej Puzyński 2017</p>
+    </div>
 </footer>
 
 </body>
