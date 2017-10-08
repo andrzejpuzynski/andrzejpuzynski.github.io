@@ -45,7 +45,7 @@ main {
     /*display: none;*/
 }
 
-.navigation-contener {
+.navigation-container {
     position: relative;
 }
 
@@ -208,14 +208,14 @@ main {
     z-index: 100;
 }
 
-.footer-bar-contener > ul > li {
+.footer-bar-container > ul > li {
     display: inline-block;
     margin: 0 0.5em 0 0.5em;
     line-height: 2em;
     text-align: center;
 }
 
-.footer-bar-contener > p {
+.footer-bar-container > p {
     font-size: 0.8em;
     font-weight: 100;
     text-align: center;
