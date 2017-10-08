@@ -1,0 +1,18 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.color-bright {
+    color: #ffffff;
+}
+
+.color-middle {
+    color: #7e7e7e;
+}
+
+.color-dark {
+    color: #000000;
+}
