@@ -46,6 +46,9 @@ main {
 }
 
 .navigation-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
 }
 
@@ -55,7 +58,6 @@ main {
     height: 2em;
     width: 2em;
     position: absolute;
-    left: 10px;
 }
 
 .navigation-logo > a {
@@ -70,7 +72,7 @@ main {
 
 .navigation-buttons {
     position: absolute;
-    right: 10px;
+    right: 0px;
 }
 
 .navigation-buttons > ul > li {
