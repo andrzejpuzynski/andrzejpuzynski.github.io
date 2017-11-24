@@ -49,7 +49,11 @@ main {
     position: relative;
 }
 
-.navigation-logo {
+.navigation-logo > a > img {
+    border-radius: 6px;
+    margin-top: 0.6em;
+    height: 2em;
+    width: 2em;
     position: absolute;
     left: 10px;
 }
