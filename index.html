@@ -5,9 +5,41 @@
     <title>Andrzej Puzynski - PERSONAL PORTFOLIO</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('#about-me, #portfolio, #contact-me').animate({opacity: 0.4}, 100);
+            $('html, body').animate({
+               scrollTop: $(hash).offset().top,
+            }, 1200, function () {
+
+              // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+
+            });
+            $('#about-me, #portfolio, #contact-me').animate({opacity: 1.0}, 1100);
+
+          } // End if
+
+        });
+      });
+    </script>
 </head>
 
-<body>
+<body data-spy="scroll">
 
 <header class="navigation">
     <div class="navigation-container">
