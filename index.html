@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Andrzej Puzynski - PERSONAL PORTFOLIO</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
-        // Add smooth scrolling to all links
-        $("a").on('click', function (event) {
 
-          // Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
+        $("a").on('click', function (event) {  // Add smooth scrolling to all links
 
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('#about-me, #portfolio, #contact-me').animate({opacity: 0.4}, 100);
+          if (this.hash !== "") { // Make sure this.hash has a value before overriding default behavior
+            event.preventDefault(); // Prevent default anchor click behavior
+            var hash = this.hash; // Store hash
             $('html, body').animate({
-               scrollTop: $(hash).offset().top,
-            }, 1200, function () {
-
-              // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-
+              scrollTop: $(hash).offset().top,
+            }, 1000, function () {
+              window.location.hash = hash; // Add hash (#) to URL when done scrolling (default click behavior)
             });
-            $('#about-me, #portfolio, #contact-me').animate({opacity: 1.0}, 1100);
-
           } // End if
 
         });
@@ -47,13 +35,13 @@
             <a href="#intro">
                 <img src="img/andrzej.jpg"" alt="">
             </a>
-        <nav class="navigation-buttons">
-            <ul>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#portfolio">My Portfolio</a></li>
-                <li><a href="#contact-me">Contact Me</a></li>
-            </ul>
-        </nav>
+            <nav class="navigation-buttons">
+                <ul>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#portfolio">My Portfolio</a></li>
+                    <li><a href="#contact-me">Contact Me</a></li>
+                </ul>
+            </nav>
     </div>
 </header>
 
@@ -69,14 +57,14 @@
         <h2>ABOUT ME</h2>
         <p>"I like it". "Woow" or "This is cool"<br>
             These are the effects of the work I like to achieve.<br>
-            Now also as a Front-End Developer.</p>
+            Now also as a Junior Front-End Developer.</p>
         <h3>Skills</h3>
         <ul id="skills">
             <li>Advanced
                 <div>
-                <img src="./img/indesign-cc.svg">
-                <img src="./img/adobe-illustrator-cc.svg">
-                <img src="./img/photoshop-cc.svg">
+                    <img src="./img/indesign-cc.svg">
+                    <img src="./img/adobe-illustrator-cc.svg">
+                    <img src="./img/photoshop-cc.svg">
                 </div>
             </li>
             <li>Improved
@@ -112,20 +100,24 @@
         <ul>
             <li>
                 <a href="http://dreamers.jfdz6.is-academy.pl/index.html">Dreamers site Page</a>
-                <p>Team project. It was created during the Junior Front-End Developer course at <a href="http://infoshareacademy.com/">infoShare Academy.</p>
+                <p>Team project. It was created during the Junior Front-End Developer course at <a
+                        href="http://infoshareacademy.com/">infoShare Academy.</p>
             </li>
             <li>
                 <a href="https://andrzejpuzynski.github.io/jQuery-game/">jQuery game</a>
-                <p>Individual project existing in a team project. It was created during the Junior Front-End Developer course at <a href="http://infoshareacademy.com/">infoShare Academy.</p>
+                <p>Individual project existing in a team project. It was created during the Junior Front-End Developer
+                    course at <a href="http://infoshareacademy.com/">infoShare Academy.</p>
             </li>
             <div class="clear"></div>
             <li>
                 <a>eBooks</a>
-                <p>For several years I have been participating in the project <a href="http://www.szortal.com/nawynos">"Szortal na Wynos"</a>. I prepare the monthly magazine in three formats: PDF, EPUB and MOBI.</p>
+                <p>For several years I have been participating in the project <a href="http://www.szortal.com/nawynos">"Szortal
+                    na Wynos"</a>. I prepare the monthly magazine in three formats: PDF, EPUB and MOBI.</p>
             </li>
             <li>
                 <a>DTP and graphics</a>
-                <p>My previous work: the composition of magazines, books, preparing illustrations and graphics for them (also the composition of music notes).</p>
+                <p>My previous work: the composition of magazines, books, preparing illustrations and graphics for them
+                    (also the composition of music notes).</p>
             </li>
             <div class="clear"></div>
     </section>
@@ -137,7 +129,7 @@
             <input type="text" name="email" id="email" placeholder="Your e-mail" required="">
             <textarea rows="4" name="message" id="message" placeholder="Your message" required=""></textarea>
             <button id="submitButton" value="send">Send message</button>
-         </form>
+        </form>
     </section>
 
 </main>
