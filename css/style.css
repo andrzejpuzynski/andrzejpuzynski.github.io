@@ -147,7 +147,7 @@ main {
     font-size: 4.5em;
     font-weight: 200;
     text-align: center;
-    margin: 1em 0 0.7em 0;
+    margin: 1em 0 0.5em 0;
 }
 
 .about-me > h3 {
@@ -209,8 +209,18 @@ main {
 }
 
 .portfolio-box:Hover {
+    animation-name: inbox;
+    transition-duration: 800ms;
     border: 4px solid rgba(255, 255, 255, 1.0);
-    color: white;
+}
+
+@keyframes inbox {
+    0% {
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 1.0);
+    }
 }
 
 .portfolio > ul > li > a {
@@ -218,7 +228,7 @@ main {
     font-weight: 600;
     line-height: 1.6em;
     text-decoration: none;
-    /*color: rgb(255, 255, 255);*/
+    color: #006dff;
     margin-top: 1em;
     margin-bottom: 2em;
     visibility: hidden;
@@ -233,6 +243,7 @@ main {
     font-size: 2.4em;
     font-weight: 200;
     text-decoration: none;
+    color: rgb(255, 255, 255);
     visibility: hidden;
 }
 
