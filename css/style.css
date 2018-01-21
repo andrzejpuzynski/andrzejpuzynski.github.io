@@ -7,8 +7,15 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 36%;
 }
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
 
 .color-bright {
     color: #ffffff;
@@ -119,7 +126,6 @@ main {
 }
 
 .intro {
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -177,11 +183,17 @@ main {
 
 #skills > li {
     float: left;
-    width: 50%;
+    width: 100%;
     text-align: center;
     list-style: none;
     font-weight: 300;
     margin-bottom: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    #skills > li {
+        width: 50%;
+    }
 }
 
 #skills > li > div > img {
@@ -193,6 +205,7 @@ main {
 #skills > li > div > a > img {
     margin-top: 0.3em;
     margin-bottom: 0.5em;
+    max-width: 100%;
 }
 
 .clear {
@@ -201,7 +214,7 @@ main {
 }
 
 .portfolio-box {
-    width: 45%;
+    width: 95%;
     list-style: none;
     margin-top: 1.5em;
     margin-bottom: 1em;
@@ -209,20 +222,27 @@ main {
     border-radius: 10px;
     text-align: center;
     border: 3px solid rgba(255, 255, 255, 1.0);
+    background-color: rgba(0, 0, 0, 1.0);
 }
 
-.portfolio-box:Hover {
-    animation-name: inbox;
-    transition-duration: 800ms;
-    border: 4px solid rgba(255, 255, 255, 1.0);
-}
-
-@keyframes inbox {
-    0% {
-        background-color: rgba(0, 0, 0, 0.0);
+@media screen and (min-width: 992px) {
+    .portfolio-box {
+        width: 45%;
     }
-    100% {
-        background-color: rgba(0, 0, 0, 1.0);
+
+    .portfolio-box:Hover {
+        animation-name: inbox;
+        transition-duration: 800ms;
+        border: 3px solid rgba(255, 255, 255, 1.0);
+    }
+
+    @keyframes inbox {
+        0% {
+         background-color: rgba(0, 0, 0, 0.0);
+        }
+        100% {
+         background-color: rgba(0, 0, 0, 1.0);
+        }
     }
 }
 
@@ -234,12 +254,19 @@ main {
     color: #006dff;
     margin-top: 1em;
     margin-bottom: 2em;
-    visibility: hidden;
+    visibility: visible;
 }
 
-.portfolio-box:hover > a {
-    color: #006dff;
-    visibility: visible;
+@media screen and (min-width: 992px) {
+    .portfolio-box > a {
+        visibility: hidden;
+    }
+
+
+    .portfolio-box:hover > a {
+        color: #006dff;
+        visibility: visible;
+    }
 }
 
 .portfolio-box > p {
@@ -247,17 +274,23 @@ main {
     font-weight: 200;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    visibility: hidden;
+    visibility: visible;
 }
 
-.portfolio-box:hover > p {
-    visibility: visible;
-    color: rgb(255, 255, 255);
+@media screen and (min-width: 992px) {
+    .portfolio-box > p {
+        visibility: hidden;
+    }
+    .portfolio-box:hover > p {
+        visibility: visible;
+        color: rgb(255, 255, 255);
+    }
 }
 
 .portfolio-box > p > a {
     text-decoration: none;
     color: #006dff;
+
 }
 
 .front-dreamers,
@@ -277,20 +310,22 @@ main {
     background-color: rgb(0, 0, 0);
 }
 
-.front-dreamers {
-    background-image: url("../images/front-dreamers.jpg");
-}
+@media screen and (min-width: 992px) {
+    .front-dreamers {
+        background-image: url("../images/front-dreamers.jpg");
+    }
 
-.front-snake {
-    background-image: url("../images/front-snake.jpg");
-}
+    .front-snake {
+        background-image: url("../images/front-snake.jpg");
+    }
 
-.front-szortal {
-    background-image: url("../images/front-szortal.jpg");
-}
+    .front-szortal {
+        background-image: url("../images/front-szortal.jpg");
+    }
 
-.front-dtp {
-    background-image: url("../images/front-dtp.jpg");
+    .front-dtp {
+        background-image: url("../images/front-dtp.jpg");
+    }
 }
 
 .contact-me > form > input,
@@ -322,8 +357,21 @@ main {
 
 .contact-me > form > button {
     text-align: center;
+    color: white;
     padding: 0 0.4em;
     display: inline-block;
+    background-color: #006dff;
+    cursor: pointer;
+    transition: all 0.5s
+}
+
+.contact-me > form > button:active {
+    color: white;
+    text-align: center;
+    padding: 0 0.4em;
+    display: inline-block;
+    background-color: #006dff;
+    transform: scale(1.1);
 }
 
 .footer-bar {
