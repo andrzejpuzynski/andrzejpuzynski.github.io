@@ -21,6 +21,7 @@
                 </ol>   
         </div>
     </div>
+    
     <div class="row align-items-start" style="color: white; background-color: blue; height: auto">
         <div class="col-12">
             <h1>Description</h1>
@@ -38,13 +39,24 @@
                 
         </div>
     </div>
-    <div class="row align-items-start" style="color: white; background-color: green; height: auto">
+    
+    <div class="row align-items-start" style="height: auto">
         <div class="col-12">
-            <h1>Textarea</h1>
-            <p>Here is textarea for inserting texts.</p>
-            <p>Below textarea will be list of buttons for processing text. Each button will have a short description of their action.</p>
+            <h1>Processing text</h1>
+            
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Paste text inside textarea below.</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+            </div>
+            
+            <div class="d-flex">
+                <button type="button" class="btn btn-success d-flex align-self-center">Process</button>
+                <div class="align-self-center mx-1"> Clear text from code tags.</div>
+            </div>
+            
         </div>
     </div>
+    
     <div class="row align-items-start" style="color: white; background-color: orange; height: auto">
         <div class="col-12">
             <h1>Stats</h1>
