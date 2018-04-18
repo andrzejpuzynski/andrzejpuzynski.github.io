@@ -53,13 +53,37 @@
             <h1>Processing text</h1>
             
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Paste text inside textarea below.</label>
                 <textarea class="textToProcess form-control" id="exampleFormControlTextarea1" rows="16"></textarea>
             </div>
             
-            <div class="d-flex">
-               <button type="button" class="btn btn-success d-flex align-self-center" onclick="ProcessOne.run()">Process</button>
-               <div class="align-self-center mx-1"> Clear text from code tags.</div>
+            <div class="d-flex flex-row my-2">
+               <button type="button" class="btn btn-success align-self-center" onclick="clearTags.run()">CLEAR</button>
+               <div class="align-self-center mx-2">HTML tags.</div>
+            </div>   
+                
+            <div class="d-flex flex-row my-2">
+               <button type="button" class="btn btn-success align-self-center" onclick="clearNbsp.run()">CLEAR</button>
+               <div class="align-self-center mx-2">no-break spaces</div>
+            </div>
+            
+           <div class="d-flex flex-row my-2">
+               <button type="button" class="btn btn-success align-self-center" onclick="clearTabs.run()">CLEAR</button>
+               <div class="align-self-center mx-2">tabs</div>
+            </div>
+            
+            <div class="d-flex flex-row my-2">
+               <button type="button" class="btn btn-success align-self-center" onclick="clearMultiSpaces.run()">CLEAR</button>
+               <div class="align-self-center mx-2">multispaces</div>
+            </div>
+            
+            <div class="d-flex flex-row my-2">
+               <button type="button" class="btn btn-success align-self-center" onclick="clearBlankLines.run()">CLEAR</button>
+               <div class="align-self-center mx-2">blank lines</div>
+            </div>
+            
+            <div class="d-flex flex-row my-2">
+               <button type="button" class="btn btn-success align-self-center" onclick="clearLineBreak.run()">CLEAR</button>
+               <div class="align-self-center mx-2">line break</div>
             </div>
             
         </div>
@@ -82,13 +106,54 @@
 </div>
 
 <script>
-	var ProcessOne = {
-    		run: function () {
-      			var $textToProcess = $('.textToProcess').val().replace(/<[A-Za-z0-9\/]+\b[^>]*>/gm,'');
-        		$('.textToProcess').empty();
-        		$('.textToProcess').val($textToProcess);
+	var clearTags = {
+        run: function () {
+            var $textToProcess = $('.textToProcess').val().replace(/<[A-Za-z0-9\/]+\b[^>]*>/gm,'');
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess); 
 		}
 	}
+    
+    var clearNbsp = {
+        run: function () {
+            var $textToProcess = $('.textToProcess').val().replace(/&nbsp;/gm, '');
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess);
+		}
+	}
+    
+    var clearTabs = {
+        run: function () {
+            var $textToProcess = $('.textToProcess').val().replace(/\t/gm,'');
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess);
+		}
+	}
+    
+    var clearMultiSpaces = {
+        run: function () {
+            var $textToProcess = $('.textToProcess').val().replace(/ +/gm, ' ').trim();
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess);
+		}
+	}
+    
+    var clearBlankLines = {
+        run: function () {
+            var $textToProcess = $('.textToProcess').val().replace(/\s+\n/gm, '\n');
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess);
+		}
+	}
+    
+    var clearLineBreak = {
+        run: function () {
+            var $textToProcess = $('.textToProcess').val().replace(/\n/gm, '').trim();
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess);
+		}
+	}
+
 </script>    
 </body>
 </html>
