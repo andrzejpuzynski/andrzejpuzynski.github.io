@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1">
     <title>Textprocessor</title>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+<style>
+.red {
+	color: red;
+}
+
+</style>
 </head>
 
 <body>
@@ -46,12 +54,12 @@
             
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Paste text inside textarea below.</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                <textarea class="textToProcess form-control" id="exampleFormControlTextarea1" rows="16"></textarea>
             </div>
             
             <div class="d-flex">
-                <button type="button" class="btn btn-success d-flex align-self-center">Process</button>
-                <div class="align-self-center mx-1"> Clear text from code tags.</div>
+               <button type="button" class="btn btn-success d-flex align-self-center" onclick="ProcessOne.run()">Process</button>
+               <div class="align-self-center mx-1"> Clear text from code tags.</div>
             </div>
             
         </div>
@@ -72,7 +80,15 @@
         </div>
     </div>
 </div>
-    
-</body>
 
+<script>
+	var ProcessOne = {
+    		run: function () {
+      			var $textToProcess = $('.textToProcess').val().replace(/<[A-Za-z0-9\/]+\b[^>]*>/gm,'');
+        		$('.textToProcess').empty();
+        		$('.textToProcess').val($textToProcess);
+		}
+	}
+</script>    
+</body>
 </html>
