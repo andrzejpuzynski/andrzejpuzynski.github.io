@@ -101,17 +101,15 @@
             
     </div>
     
-    <div class="row align-items-start" style="color: white; background-color: orange; height: auto">
+    <div class="row align-items-start" style="color white; background-color: orange; height: auto">
         <div class="col-12">
-            <h1>Stats</h1>
-            <p>To help in processing text will be stats here.</p>
-            <p>Kinds of stats</p>
-                <ul>
-                    <li>lenght of text</li>
-                    <li>number of spaces in text</li>
-                    <li>stats of simple characters</li>
-                    <li>stats of pairs of characters</li>
-                    <li>... some other stats in plans</li>
+		<h1>Stats</h1>
+		<ul>
+               	<li class="textLength"  style="list-style-type: none">lenght of text: </li>
+                	<li class="numberOfSpaces"  style="list-style-type: none">number of spaces in text:</li>
+                	<li>stats of simple characters</li>
+                	<li>stats of pairs of characters</li>
+                	<li>... some other stats in plans</li>
                 </ul> 
         </div>
     </div>
@@ -120,8 +118,8 @@
 <script>
 	var textClear = {
         clearTags: function () {
-            var $textToProcess = $('.textToProcess').val().replace(/<[A-Za-z0-9\/]+\b[^>]*>/gm,'');
-            $('.textToProcess').empty();
+         	var $textToProcess = $('.textToProcess').val().replace(/<[A-Za-z0-9\/]+\b[^>]*>/gm,'');
+            	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
 		},
         clearNbsp: function () {
@@ -156,6 +154,7 @@
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => ar.indexOf(i) === idx).join(` `);
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+		stats();
         },
         wordsIncludingInLongerWords: function () {
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => !ar.some((y, idy) => y.includes(i) && y.length > i.length) ).join(' ');
@@ -163,6 +162,12 @@
         	$('.textToProcess').val($textToProcess);
         }
     }
+
+  function stats() {
+        	$('.textLength').text(`lenght of text: ${$('.textToProcess').val().length}`);
+        	$('.numberOfSpaces').text(`number of spaces in text: ${$('.textToProcess').val().replace(/[^ ]/gm, '').length}`);
+
+   }
 
 	
 </script>    
