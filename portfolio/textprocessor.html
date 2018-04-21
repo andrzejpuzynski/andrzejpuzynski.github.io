@@ -10,7 +10,7 @@
 
 <body>
 <div class="container-fluid">
-    <div class="row align-items-start" style="color: white; background-color: grey; height: auto">
+    <div class="row align-items-start" style="color: white; background-color: dimgrey; height: auto">
         <div class="col-12">
             <h1>Header</h1>
                 <ol>
@@ -23,18 +23,18 @@
         </div>
     </div>
     
-    <div class="row align-items-start" style="color: white; background-color: blue; height: auto">
+    <div class="row align-items-start" style="color: steelblue; background-color: lightcyan; height: auto">
         <div class="col-12">
             <h1>Description</h1>
-            <p>The Textpreprocessor Project is the tool for processing various text strings. </p>
+            <p>The Textprocessor Project is the tool for processing various text strings. I created it to preparing texts for touch typing excersises.</p>
+            <p></p>
             <p>Features</p>
                 <ul>
-                    <li>cleaning code from html tags to extract simple text</li>
-                    <li>cleaning multiple spaces, tabs and linebreaks from text</li>
-                    <li>deleting repeating words</li>
-                    <li>reducing text from words that are including in otehr words this text</li>
-                    <li>capitalizing first letter of certains word</li>
+                    <li>cleaning code from html tags, multiple spaces, tabs and linebreaks etc.</li>
+                    <li>removing repeating words, words that are including in other words</li>
+                    <li>capitalizing first letter of certains words</li>
                     <li>inserting special characters on special position in text</li>
+                    <li>simple text statistics</li>
                     <li>... some other features in plans</li>
                 </ul>  
                 
@@ -52,7 +52,7 @@
     
     <div class="row align-items-start" style="height: auto">
         
-        <div class="col-6">
+        <div class="col-4">
          
              <div class="d-flex flex-row my-2">
                 <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearTags()">CLEAR</button>
@@ -86,7 +86,7 @@
              
         </div> 
          
-        <div class="col-6">
+        <div class="col-4">
          
             <div class="d-flex flex-row my-2">
                 <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordDuplicates()">REMOVE</button>
@@ -97,13 +97,25 @@
                 <div class="align-self-center mx-2">words including in longer words</div>
             </div>
 
-         </div>  
+        </div>  
+
+        <div class="col-4">
+         
+            <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.allWordsStartsUpperCase()">PROCESS</button>
+                <div class="align-self-center mx-2">all words starts upper case</div>
+            </div>
+
+        </div>  
             
     </div>
     
     <div class="row align-items-start" style="color white; background-color: orange; height: auto">
         <div class="col-12">
 		<h1>Stats</h1>
+        <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-dark align-self-center" onclick="stats()">Refresh stats</button>
+            </div>
 		<ul>
                	<li class="textLength"  style="list-style-type: none">lenght of text: </li>
                 	<li class="numberOfSpaces"  style="list-style-type: none">number of spaces in text:</li>
@@ -154,13 +166,22 @@
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => ar.indexOf(i) === idx).join(` `);
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
-		stats();
+            stats();
         },
         wordsIncludingInLongerWords: function () {
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => !ar.some((y, idy) => y.includes(i) && y.length > i.length) ).join(' ');
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
         }
+    }
+    
+    var textProcess = {
+        allWordsStartsUpperCase: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ').map(i => i.slice(0, 1).toUpperCase().concat(i.slice(1))).join(` `);
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess);
+            stats();
+        },
     }
 
   function stats() {
