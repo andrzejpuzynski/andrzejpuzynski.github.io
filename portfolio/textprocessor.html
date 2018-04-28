@@ -93,6 +93,11 @@
                 <button type="button" class="btn btn-info align-self-center" onclick="textProcess.allWordsStartsUpperCase()">PROCESS</button>
                 <div class="align-self-center mx-2">all words starts upper case</div>
             </div>
+            
+            <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.swapAllWords()">PROCESS</button>
+                <div class="align-self-center mx-2">swap all words</div>
+            </div>
 
         </div>  
             
@@ -184,6 +189,19 @@
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
         },
+        swapAllWords: function () {
+            var result = [];
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            
+            while ($textToProcess.length > 0 ) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                result.push($textToProcess.filter((i, idx) => idx === tempIndex));
+                $textToProcess = $textToProcess.filter((i, idx) => idx !== tempIndex);
+            }
+                        
+            $('.textToProcess').empty();
+            $('.textToProcess').val(result.join(` `));
+        }
     }
 
     function stats() {
