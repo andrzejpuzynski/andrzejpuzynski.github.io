@@ -98,6 +98,11 @@
                 <button type="button" class="btn btn-info align-self-center" onclick="textProcess.swapAllWords()">PROCESS</button>
                 <div class="align-self-center mx-2">swap all words</div>
             </div>
+            
+            <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.divideTextOnThousand()">PROCESS</button>
+                <div class="align-self-center mx-2">divide text on parts containing about 1000 characters</div>
+            </div>
 
         </div>  
             
@@ -201,6 +206,27 @@
                         
             $('.textToProcess').empty();
             $('.textToProcess').val(result.join(` `));
+        },
+        divideTextOnThousand: function () {
+            var result = [[]];
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var partOfText = 0;
+            
+            while ($textToProcess.length > 0 ) {
+
+                if (result[partOfText].join(' ').concat(` ${$textToProcess[0]}`).length > 1000) {
+                    result.push([]);
+                    partOfText = partOfText + 1;
+                }
+                
+                result[partOfText].push($textToProcess[0]);
+                $textToProcess.shift();
+
+            }
+            
+            result = result.map(i => i.join(' '));
+            $('.textToProcess').empty();
+            $('.textToProcess').val(result.join(`\n`));
         }
     }
 
