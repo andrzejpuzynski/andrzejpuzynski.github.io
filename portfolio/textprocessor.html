@@ -32,15 +32,12 @@
         </div>
     </nav>
     
-    <div id="processingText" class="row align-content-start" style="padding-top: 60px; min-height: 100vh; max-height: auto">
-        <div class="col-12">
+    <div id="main" class="row align-content-start" style="min-height: 100vh; max-height: auto">
+        <div class="col-8" id="processingText" style="padding-top: 60px">
             <h1>Processing text</h1>
                 <div class="form-group">
                     <textarea class="textToProcess form-control" id="exampleFormControlTextarea1" rows="16"></textarea>
                 </div>
-        </div>
-        
-        <div class="col-lg-4">
          
              <div class="d-flex flex-row my-2">
                 <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearTags()">CLEAR</button>
@@ -72,10 +69,7 @@
                 <div class="align-self-center mx-2">line break</div>
              </div>
              
-        </div> 
-         
-        <div class="col-lg-4">
-         
+     
             <div class="d-flex flex-row my-2">
                 <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordDuplicates()">REMOVE</button>
                 <div class="align-self-center mx-2">word duplicates</div>
@@ -85,9 +79,6 @@
                 <div class="align-self-center mx-2">words including in longer words</div>
             </div>
 
-        </div>  
-
-        <div class="col-lg-4">
          
             <div class="d-flex flex-row my-2">
                 <button type="button" class="btn btn-info align-self-center" onclick="textProcess.allWordsStartsUpperCase()">PROCESS</button>
@@ -106,18 +97,22 @@
 
         </div>  
             
-    </div>
 
-    <div id="stats" class="row align-content-start" style="color white; background-color: orange; padding-top: 60px; min-height: 100vh; max-height: auto">
-        <div class="col-12">
+    
+    <div class="col-4" id="stats" style="padding-top: 60px; color white; background-color: orange">
 		<h1>Stats</h1>
-		<ul>
+		<ul style="padding-left: 0px">
             <li class="textLength"  style="list-style-type: none">lenght of text: </li>
             <li class="numberOfSpaces"  style="list-style-type: none">number of spaces in text:</li>
         </ul> 
-        </div>
-    </div>
-
+        
+        <table class="letters">
+        </table>
+        
+    </div> 
+        
+   </div>
+        
     <div id="about" class="row align-content-start" style="padding-top: 60px; color: steelblue; background-color: lightcyan; min-height: 100vh; max-height: auto">
         <div class="col-12">
             <h1>About</h1>
@@ -140,108 +135,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-<script>
-	var textClear = {
-        clearTags: function () {
-         	var $textToProcess = $('.textToProcess').val().replace(/<[A-Za-z0-9\/]+\b[^>]*>/gm,'');
-            	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-		},
-        clearNbsp: function () {
-            var $textToProcess = $('.textToProcess').val().replace(/&nbsp;/gm, '');
-            $('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-        },
-        clearTabs: function () {
-            var $textToProcess = $('.textToProcess').val().replace(/\t/gm,'');
-        	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-		},
-        clearMultiSpaces: function () {
-            var $textToProcess = $('.textToProcess').val().replace(/ +/gm, ' ').trim();
-        	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-		},
-        clearBlankLines: function () {
-            var $textToProcess = $('.textToProcess').val().replace(/\s+\n/gm, '\n');
-        	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-		},
-        clearLineBreak: function () {
-            var $textToProcess = $('.textToProcess').val().replace(/\n/gm, '').trim();
-        	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-        }
-    }
     
-    var textRemove = {
-        wordDuplicates: function () {
-            var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => ar.indexOf(i) === idx).join(` `);
-        	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-        },
-        wordsIncludingInLongerWords: function () {
-            var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => !ar.some((y, idy) => y.includes(i) && y.length > i.length) ).join(' ');
-        	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-        }
-    }
-    
-    var textProcess = {
-        allWordsStartsUpperCase: function () {
-            var $textToProcess = $('.textToProcess').val().split(' ').map(i => i.slice(0, 1).toUpperCase().concat(i.slice(1))).join(` `);
-        	$('.textToProcess').empty();
-        	$('.textToProcess').val($textToProcess);
-        },
-        swapAllWords: function () {
-            var result = [];
-            var $textToProcess = $('.textToProcess').val().split(' ');
-            
-            while ($textToProcess.length > 0 ) {
-                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
-                result.push($textToProcess.filter((i, idx) => idx === tempIndex));
-                $textToProcess = $textToProcess.filter((i, idx) => idx !== tempIndex);
-            }
-                        
-            $('.textToProcess').empty();
-            $('.textToProcess').val(result.join(` `));
-        },
-        divideTextOnCertainCharacters: function () {
-            var result = [[]];
-            var $textToProcess = $('.textToProcess').val().split(' ');
-            var $lenghtOfTextAfterDividing = $('#lenghtOfTextAfterDividing').val()
-            var partOfText = 0;
-            
-            while ($textToProcess.length > 0 ) {
-
-                if (result[partOfText].join(' ').concat(` ${$textToProcess[0]}`).length > $lenghtOfTextAfterDividing) {
-                    result.push([]);
-                    partOfText = partOfText + 1;
-                }
-                
-                result[partOfText].push($textToProcess[0]);
-                $textToProcess.shift();
-
-            }
-            
-            result = result.map(i => i.join(' '));
-            $('.textToProcess').empty();
-            $('.textToProcess').val(result.join(`\n`));
-        }
-    }
-
-    function stats() {
-        	$('.textLength').text(`lenght of text: ${$('.textToProcess').val().length}`);
-        	$('.numberOfSpaces').text(`number of spaces in text: ${$('.textToProcess').val().replace(/[^ ]/gm, '').length}`);
-
-    }
-    
-    $(".textToProcess").keyup(x => stats());
-    $(".textToProcess").mouseenter(x => stats());
-    $(".textToProcess").change(x => stats());
-    $("button").click(x => stats());
-	
-</script>    
+    <script src="../js/textprocessorProcessingText.js"></script>
+    <script src="../js/textprocessorStats.js"></script>
+   
 </body>
 </html>
