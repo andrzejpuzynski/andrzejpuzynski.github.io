@@ -100,8 +100,8 @@
             </div>
             
             <div class="d-flex flex-row my-2">
-                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.divideTextOnThousand()">PROCESS</button>
-                <div class="align-self-center mx-2">divide text on parts containing about 1000 characters</div>
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.divideTextOnCertainCharacters()">PROCESS</button>
+                <div class="align-self-center mx-2">divide the text into parts of no more than <input class="form-control" type="text" placeholder="1000" id="lenghtOfTextAfterDividing" style="width: 70px; height: 23px; display: inline"> characters</div>
             </div>
 
         </div>  
@@ -207,14 +207,15 @@
             $('.textToProcess').empty();
             $('.textToProcess').val(result.join(` `));
         },
-        divideTextOnThousand: function () {
+        divideTextOnCertainCharacters: function () {
             var result = [[]];
             var $textToProcess = $('.textToProcess').val().split(' ');
+            var $lenghtOfTextAfterDividing = $('#lenghtOfTextAfterDividing').val()
             var partOfText = 0;
             
             while ($textToProcess.length > 0 ) {
 
-                if (result[partOfText].join(' ').concat(` ${$textToProcess[0]}`).length > 1000) {
+                if (result[partOfText].join(' ').concat(` ${$textToProcess[0]}`).length > $lenghtOfTextAfterDividing) {
                     result.push([]);
                     partOfText = partOfText + 1;
                 }
