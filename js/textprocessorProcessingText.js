@@ -41,6 +41,13 @@
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => !ar.some((y, idy) => y.includes(i) && y.length > i.length) ).join(' ');
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+        },
+        wordsNotIncludingFirstLetterFromInput: function () {
+            var $firstLetterOfWord = $('#firstLetterOfWord').val();
+            var $textToProcess = $('.textToProcess').val().split(' ')
+            .filter(i => $firstLetterOfWord.includes(i.slice(0,1)) ).join(' ');
+        	$('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess);
         }
     }
     

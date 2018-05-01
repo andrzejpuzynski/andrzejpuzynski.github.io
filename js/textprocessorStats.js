@@ -3,7 +3,7 @@
         	
         $('.numberOfSpaces').text(`Number of spaces in text: ${$('.textToProcess').val().replace(/[^ ]/gm, '').length}`);
         
-        var $lettersToStatistic = 'aąbcćdeęfghijklłmnoópqrsśtuvwxyzżź';
+        var $lettersToStatistic = 'aąbcćdeęfghijklłmnńoópqrsśtuvwxyzżź';
         var $listOfLettersStatistic = $lettersToStatistic.split('')
         .map(i => `<tr style="border-bottom: 1px solid #ff9500">
             <td style="width: 80px">${i}</td>
@@ -11,10 +11,10 @@
              $('.textToProcess').val().split('').filter(y => y === i).length : ''}</td>
             <td style="width: 80px">${$('.textToProcess').val().split('').filter(y => y === i.toUpperCase()).length > 0 ?
              $('.textToProcess').val().split('').filter(y => y === i.toUpperCase()).length : ''}</td>
-            <td style="width: 80px">${$('.textToProcess').val().split(' ').filter(y => y.slice(0,1) === i).length > 0 ?
-             $('.textToProcess').val().split(' ').filter(y => y.slice(0,1) === i).length : ''}</td>
-            <td style="width: 80px">${$('.textToProcess').val().split(' ').filter(y => y.slice(0,1) === i.toUpperCase()).length > 0 ?
-             $('.textToProcess').val().split(' ').filter(y => y.slice(0,1) === i.toUpperCase()).length : ''}</td>
+            <td style="width: 80px">${$('.textToProcess').val().split(/[\r\n\ ]+/gm).filter(y => y.slice(0,1) === i).length > 0 ?
+             $('.textToProcess').val().split(/[\r\n\ ]+/gm).filter(y => y.slice(0,1) === i).length : ''}</td>
+            <td style="width: 80px">${$('.textToProcess').val().split(/[\r\n\ ]+/gm).filter(y => y.slice(0,1) === i.toUpperCase()).length > 0 ?
+             $('.textToProcess').val().split(/[\r\n\ ]+/gm).filter(y => y.slice(0,1) === i.toUpperCase()).length : ''}</td>
         </tr>`)
         $('.letters').empty();
         $('.letters').html(`<tr style="border-bottom: 1px solid #ff9500">
