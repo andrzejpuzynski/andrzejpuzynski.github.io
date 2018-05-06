@@ -91,5 +91,17 @@
             result = result.map(i => i.join(' '));
             $('.textToProcess').empty();
             $('.textToProcess').val(result.join(`\n\n`));
+        },
+        addAtEndOfTheWordsCharacter: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWords = !$('#numberOfWords').val() ? 10 : $('#numberOfWords').val();
+            var $characterToAdding = !$('#characterToAdding').val() ? "," : $('#characterToAdding').val();
+                        
+            for (i = 1; i < $numberOfWords; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? i.concat($characterToAdding) : i);
+            }
+            $('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess.join(' '));
         }
     }
