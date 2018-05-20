@@ -97,9 +97,31 @@
             var $numberOfWords = !$('#numberOfWords').val() ? 10 : $('#numberOfWords').val();
             var $characterToAdding = !$('#characterToAdding').val() ? "," : $('#characterToAdding').val();
                         
-            for (i = 1; i < $numberOfWords; i++) {
+            for (i = 1; i <= $numberOfWords; i++) {
                 var tempIndex = Math.floor(Math.random()*$textToProcess.length);
                 $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? i.concat($characterToAdding) : i);
+            }
+            $('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess.join(' '));
+        },
+        wrapTheWordsWithSimpleQuotes: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWordsforSimpleQuotes = !$('#numberOfWordsforSimpleQuotes').val() ? 10 : $('#numberOfWordsforSimpleQuotes').val();
+                        
+            for (i = 1; i <= $numberOfWordsforSimpleQuotes; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? "'".concat(i).concat("'") : i);
+            }
+            $('.textToProcess').empty();
+        	$('.textToProcess').val($textToProcess.join(' '));
+        },
+        wrapTheWordsWithDoubleQuotes: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWordsforDoubleQuotes = !$('#numberOfWordsforDoubleQuotes').val() ? 10 : $('#numberOfWordsforDoubleQuotes').val();
+                        
+            for (i = 1; i <= $numberOfWordsforDoubleQuotes; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCodePoint(34).concat(i).concat(String.fromCodePoint(34)) : i);
             }
             $('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess.join(' '));
