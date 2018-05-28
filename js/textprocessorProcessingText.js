@@ -125,5 +125,16 @@
             }
             $('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess.join(' '));
+        },
+        wrapTheWordsWithTriangleBrackets: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWordsforTriangleBrackets = !$('#numberOfWordsforTriangleBrackets').val() ? 10 : $('#numberOfWordsforTriangleBrackets').val();
+                        
+            for (i = 1; i <= $numberOfWordsforTriangleBrackets; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCharCode(60).concat(i).concat(String.fromCharCode(62)) : i);
+            }
+            $('.textToProcess').empty();
+            $('.textToProcess').val($textToProcess.join(' '));
         }
     }
