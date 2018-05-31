@@ -48,6 +48,13 @@
             .filter(i => $firstLetterOfWord.includes(i.slice(0,1)) ).join(' ');
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+        },
+        wordsIncludingFirstLetterFromInput: function () {
+            var $firstLetterOfWordToIncluding = $('#firstLetterOfWordToIncluding').val();
+            var $textToProcess = $('.textToProcess').val().split(' ')
+            .filter(i => !$firstLetterOfWordToIncluding.includes(i.slice(0,1)) ).join(' ');
+            $('.textToProcess').empty();
+            $('.textToProcess').val($textToProcess);
         }
     }
     
