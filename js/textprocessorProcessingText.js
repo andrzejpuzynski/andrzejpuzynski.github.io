@@ -31,7 +31,7 @@
         }
     }
     
-        var textRemove = {
+    var textRemove = {
         wordDuplicates: function () {
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => ar.indexOf(i) === idx).join(` `);
         	$('.textToProcess').empty();
@@ -140,6 +140,17 @@
             for (i = 1; i <= $numberOfWordsforTriangleBrackets; i++) {
                 var tempIndex = Math.floor(Math.random()*$textToProcess.length);
                 $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCharCode(60).concat(i).concat(String.fromCharCode(62)) : i);
+            }
+            $('.textToProcess').empty();
+            $('.textToProcess').val($textToProcess.join(' '));
+        },
+        wrapTheWordsWithSquareBrackets: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWordsforSquareBrackets = !$('#numberOfWordsforSquareBrackets').val() ? 10 : $('#numberOfWordsforSquareBrackets').val();
+                        
+            for (i = 1; i <= $numberOfWordsforSquareBrackets; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCharCode(91).concat(i).concat(String.fromCharCode(93)) : i);
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
