@@ -113,10 +113,20 @@
         },
         wrapTheWordsWithSimpleQuotes: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
-            var $numberOfWordsforSimpleQuotes = !$('#numberOfWordsforSimpleQuotes').val() ? 10 : $('#numberOfWordsforSimpleQuotes').val();
+            var $maxWordsForSimpleQuotes = $textToProcess.filter(i => i.slice(0, 1) !== "'").length;
+            console.log($maxWordsForSimpleQuotes);
+            var $numberOfWordsforSimpleQuotes = !$('#numberOfWordsforSimpleQuotes').val() ?
+                                                $maxWordsForSimpleQuotes :
+                                                ($maxWordsForSimpleQuotes < $('#numberOfWordsforSimpleQuotes').val()) ?
+                                                $maxWordsForSimpleQuotes : $('#numberOfWordsforSimpleQuotes').val();
                         
             for (i = 1; i <= $numberOfWordsforSimpleQuotes; i++) {
                 var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+
+                while($textToProcess[tempIndex].slice(0,1) === "'") {
+                    var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                };
+
                 $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? "'".concat(i).concat("'") : i);
             }
             $('.textToProcess').empty();
