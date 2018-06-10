@@ -177,5 +177,16 @@
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
+        },
+        wrapTheWordsWithBackticks: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWordsforBackticks = !$('#numberOfWordsforBackticks').val() ? 10 : $('#numberOfWordsforBackticks').val();
+                        
+            for (i = 1; i <= $numberOfWordsforBackticks; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCharCode(96).concat(i).concat(String.fromCharCode(96)) : i);
+            }
+            $('.textToProcess').empty();
+            $('.textToProcess').val($textToProcess.join(' '));
         }
     }
