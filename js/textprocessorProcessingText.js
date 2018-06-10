@@ -102,10 +102,11 @@
         divideTextOnEqualParts: function () {
             var result = "";
             var $textToProcess = $('.textToProcess').val();
-            var parts = !$('#lenghtOfEqualParts').val() ? 10 : $('#lenghtOfEqualParts').val();   
+            var parts = !$('#lenghtOfEqualParts').val() ? 10 : parseInt($('#lenghtOfEqualParts').val());   
 
-            for(i = 0; i < $textToProcess.length; i = i+parts) {
+            for(i = 0; i < $textToProcess.length; i += parts) {
                 result = result.concat(`${$textToProcess.slice(i, i+parts)} `);
+                console.log(i);
             }
 
             $('.textToProcess').empty();
