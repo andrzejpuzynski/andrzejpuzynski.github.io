@@ -99,6 +99,18 @@
             $('.textToProcess').empty();
             $('.textToProcess').val(result.join(`\n\n`));
         },
+        divideTextOnEqualParts: function () {
+            var result = "";
+            var $textToProcess = $('.textToProcess').val();
+            var parts = !$('#lenghtOfEqualParts').val() ? 10 : $('#lenghtOfEqualParts').val();   
+
+            for(i = 0; i < $textToProcess.length; i = i+parts) {
+                result = result.concat(`${$textToProcess.slice(i, i+parts)} `);
+            }
+
+            $('.textToProcess').empty();
+            $('.textToProcess').val(result.trim());
+        },
         addAtEndOfTheWordsCharacter: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
             var $numberOfWords = !$('#numberOfWords').val() ? 10 : $('#numberOfWords').val();
