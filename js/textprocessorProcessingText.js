@@ -188,5 +188,16 @@
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
-        }
+        },
+        wrapTheWordsWithCurlyBrackets: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWordsforCurlyBrackets = !$('#numberOfWordsforCurlyBrackets').val() ? 10 : $('#numberOfWordsforCurlyBrackets').val();
+                        
+            for (i = 1; i <= $numberOfWordsforCurlyBrackets; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCharCode(123).concat(i).concat(String.fromCharCode(125)) : i);
+            }
+            $('.textToProcess').empty();
+            $('.textToProcess').val($textToProcess.join(' '));
+        },
     }
