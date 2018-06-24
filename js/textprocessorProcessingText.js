@@ -127,7 +127,6 @@
         wrapTheWordsWithSimpleQuotes: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
             var $maxWordsForSimpleQuotes = $textToProcess.filter(i => i.slice(0, 1) !== "'").length;
-            console.log($maxWordsForSimpleQuotes);
             var $numberOfWordsforSimpleQuotes = !$('#numberOfWordsforSimpleQuotes').val() ?
                                                 $maxWordsForSimpleQuotes :
                                                 ($maxWordsForSimpleQuotes < $('#numberOfWordsforSimpleQuotes').val()) ?
@@ -147,10 +146,19 @@
         },
         wrapTheWordsWithDoubleQuotes: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
-            var $numberOfWordsforDoubleQuotes = !$('#numberOfWordsforDoubleQuotes').val() ? 10 : $('#numberOfWordsforDoubleQuotes').val();
+            var $maxWordsForDoubleQuotes = $textToProcess.filter(i => i.slice(0, 1) !== String.fromCodePoint(34)).length;
+            var $numberOfWordsforDoubleQuotes = !$('#numberOfWordsforDoubleQuotes').val() ?
+                                                $maxWordsForDoubleQuotes :
+                                                ($maxWordsForDoubleQuotes < $('#numberOfWordsforDoubleQuotes').val()) ?
+                                                $maxWordsForDoubleQuotes : $('#numberOfWordsforDoubleQuotes').val();
                         
             for (i = 1; i <= $numberOfWordsforDoubleQuotes; i++) {
                 var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+
+                while($textToProcess[tempIndex].slice(0,1) === String.fromCodePoint(34)) {
+                   var tempIndex = Math.floor(Math.random()*$textToProcess.length); 
+                }
+
                 $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCodePoint(34).concat(i).concat(String.fromCodePoint(34)) : i);
             }
             $('.textToProcess').empty();
