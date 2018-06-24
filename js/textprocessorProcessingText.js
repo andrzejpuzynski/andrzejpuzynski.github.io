@@ -200,4 +200,15 @@
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
         },
+        wrapTheWordsWithRoundBrackets: function () {
+            var $textToProcess = $('.textToProcess').val().split(' ');
+            var $numberOfWordsforRoundBrackets = !$('#numberOfWordsforRoundBrackets').val() ? 10 : $('#numberOfWordsforRoundBrackets').val();
+                        
+            for (i = 1; i <= $numberOfWordsforRoundBrackets; i++) {
+                var tempIndex = Math.floor(Math.random()*$textToProcess.length);
+                $textToProcess = $textToProcess.map((i, idx) => idx === tempIndex ? String.fromCharCode(40).concat(i).concat(String.fromCharCode(41)) : i);
+            }
+            $('.textToProcess').empty();
+            $('.textToProcess').val($textToProcess.join(' '));
+        },
     }
