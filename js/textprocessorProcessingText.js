@@ -227,15 +227,15 @@
 
             var result = [];
 
-            var smallEnglishLetters = `abcdefghijklmnopqrstuvwxyz`;
-            var largeEnglishLetters = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`;
+            var smallEnglishLetters = $(`#smallEnglishLetters`)[0].checked ? `abcdefghijklmnopqrstuvwxyz` : ``;
+            var largeEnglishLetters = $(`#largeEnglishLetters`)[0].checked ? `ABCDEFGHIJKLMNOPQRSTUVWXYZ` : ``;
 
-            var addedSmallPolishLetters = `ąćęńłóśżź`;
-            var addedLargePolishLetters = `ĄĆĘŃŁÓŚŻŹ`;
+            var addedSmallPolishLetters = $(`#addedSmallPolishLetters`)[0].checked ?  `ąćęńłóśżź` : ``;
+            var addedLargePolishLetters = $(`#addedLargePolishLetters`)[0].checked ? `ĄĆĘŃŁÓŚŻŹ` : ``;
 
-            var numbers = `0123456789`;
-            var programmerCharacters = `~!@#$%^&*()-=_+[]{};:,./<>?`;
-            var programmerCharactersFromCode = String.fromCharCode(96, 34, 39, 92, 124);
+            var numbers = $(`#numbers`)[0].checked ? `0123456789`: ``;
+            var programmerCharacters = $(`#programmerCharacters`)[0].checked ? `~!@#$%^&*()-=_+[]{};:,./<>?` : ``;
+            var programmerCharactersFromCode = $(`#programmerCharacters`)[0].checked ? String.fromCharCode(96, 34, 39, 92, 124) : ``;
 
             var source = "".
             concat(smallEnglishLetters).
