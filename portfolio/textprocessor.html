@@ -197,10 +197,34 @@
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
             <div class="card-body">
               <div class="d-flex flex-row my-2">
-                <button type="button" class="btn btn-danger btn-sm align-self-center" onclick="textGenerate.allSmallLetters()">GENERATE</button>
+                <button type="button" class="btn btn-danger btn-sm align-self-center" onclick="textGenerate.characterPairs()">GENERATE</button>
                 <div class="align-self-center mx-2">
-                  pairs of all small English letters.
+                  string of character pairs containing:
                 </div>
+              </div>
+              <div class="d-flex flex-row custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="smallEnglishLetters">
+                  <label class="custom-control-label" for="smallEnglishLetters">small English letters</label>
+              </div>
+              <div class="d-flex flex-row custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="largeEnglishLetters">
+                  <label class="custom-control-label" for="largeEnglishLetters">large English letters</label>
+              </div>
+              <div class="d-flex flex-row custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="addedSmallPolishLetters">
+                  <label class="custom-control-label" for="addedSmallPolishLetters">added small Polish letters</label>
+              </div>
+              <div class="d-flex flex-row custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="addedLargePolishLetters">
+                  <label class="custom-control-label" for="addedLargePolishLetters">added large Polish letters</label>
+              </div>
+              <div class="d-flex flex-row custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="numbers">
+                  <label class="custom-control-label" for="numbers">numbers</label>
+              </div>
+              <div class="d-flex flex-row custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="programmerCharacters">
+                  <label class="custom-control-label" for="programmerCharacters">programmer characters</label>
               </div>
             </div>
           </div>

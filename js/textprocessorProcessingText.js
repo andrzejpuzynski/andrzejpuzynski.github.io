@@ -220,3 +220,38 @@
             $('.textToProcess').val($textToProcess.join(' '));
         },
     }
+
+    var textGenerate = {
+        characterPairs: function () {
+            $('.textToProcess').val("");
+
+            var result = [];
+
+            var smallEnglishLetters = `abcdefghijklmnopqrstuvwxyz`;
+            var largeEnglishLetters = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`;
+
+            var addedSmallPolishLetters = `ąćęńłóśżź`;
+            var addedLargePolishLetters = `ĄĆĘŃŁÓŚŻŹ`;
+
+            var numbers = `0123456789`;
+            var programmerCharacters = `~!@#$%^&*()-=_+[]{};:,./<>?`;
+            var programmerCharactersFromCode = String.fromCharCode(96, 34, 39, 92, 124);
+
+            var source = "".
+            concat(smallEnglishLetters).
+            concat(largeEnglishLetters).
+            concat(addedSmallPolishLetters).
+            concat(addedLargePolishLetters).
+            concat(numbers).
+            concat(programmerCharacters).
+            concat(programmerCharactersFromCode);
+
+            for (i = 0; i <= (source.length-1); i++) {
+              for (j = 0; j <= (source.length-1); j++) {
+                result.push(`${source.split('')[i]}${source.split('')[j]}`)
+              }
+            }
+
+            $('.textToProcess').val(`${result.join(" ")}`);
+        },
+    }
