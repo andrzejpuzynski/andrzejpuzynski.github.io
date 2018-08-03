@@ -25,141 +25,170 @@
     </div>
   </nav>
   <div id="main" class="row align-content-start" style="min-height: 100vh; max-height: auto">
-    <div class="pl-4 pr-4 col-12 col-lg-8" id="processingText" style="padding-top: 60px">
+    <div class="pl-4 pr-4 pb-5 col-12 col-lg-8" id="processingText" style="padding-top: 60px">
       <h1>Processing text</h1>
       <div class="form-group">
         <textarea class="textToProcess form-control" id="exampleFormControlTextarea1" rows="16"></textarea>
       </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearTags()">CLEAR</button>
-        <div class="align-self-center mx-2">
-          HTML tags.
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header bg-success" id="headingOne">
+            <h5 class="mb-0"><button class="btn btn-link text-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">CLEAR</button></h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearTags()">CLEAR</button>
+                <div class="align-self-center mx-2">
+                  HTML tags.
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearNbsp()">CLEAR</button>
+                <div class="align-self-center mx-2">
+                  no-break spaces
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearTabs()">CLEAR</button>
+                <div class="align-self-center mx-2">
+                  tabs
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearMultiSpaces()">CLEAR</button>
+                <div class="align-self-center mx-2">
+                  multispaces
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearBlankLines()">CLEAR</button>
+                <div class="align-self-center mx-2">
+                  blank lines
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearLineBreak()">CLEAR</button>
+                <div class="align-self-center mx-2">
+                  line break
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearNbsp()">CLEAR</button>
-        <div class="align-self-center mx-2">
-          no-break spaces
+        <div class="card">
+          <div class="card-header bg-primary" id="headingTwo">
+            <h5 class="mb-0"><button class="btn btn-link text-light collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">REMOVE</button></h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordDuplicates()">REMOVE</button>
+                <div class="align-self-center mx-2">
+                  word duplicates
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordsIncludingInLongerWords()">REMOVE</button>
+                <div class="align-self-center mx-2">
+                  words including in longer words
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordsNotIncludingFirstLetterFromInput()">REMOVE</button>
+                <div class="align-self-center mx-2">
+                  words not starting with a letter <input class="form-control" type="text" placeholder="" id="firstLetterOfWord" style="width: 70px; height: 23px; display: inline" />
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordsIncludingFirstLetterFromInput()">REMOVE</button>
+                <div class="align-self-center mx-2">
+                  words starting with a letter <input class="form-control" type="text" placeholder="" id="firstLetterOfWordToIncluding" style="width: 70px; height: 23px; display: inline" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearTabs()">CLEAR</button>
-        <div class="align-self-center mx-2">
-          tabs
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearMultiSpaces()">CLEAR</button>
-        <div class="align-self-center mx-2">
-          multispaces
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearBlankLines()">CLEAR</button>
-        <div class="align-self-center mx-2">
-          blank lines
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-success align-self-center" onclick="textClear.clearLineBreak()">CLEAR</button>
-        <div class="align-self-center mx-2">
-          line break
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordDuplicates()">REMOVE</button>
-        <div class="align-self-center mx-2">
-          word duplicates
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordsIncludingInLongerWords()">REMOVE</button>
-        <div class="align-self-center mx-2">
-          words including in longer words
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordsNotIncludingFirstLetterFromInput()">REMOVE</button>
-        <div class="align-self-center mx-2">
-          words not starting with a letter <input class="form-control" type="text" placeholder="" id="firstLetterOfWord" style="width: 70px; height: 23px; display: inline" />
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-primary align-self-center" onclick="textRemove.wordsIncludingFirstLetterFromInput()">REMOVE</button>
-        <div class="align-self-center mx-2">
-          words starting with a letter <input class="form-control" type="text" placeholder="" id="firstLetterOfWordToIncluding" style="width: 70px; height: 23px; display: inline" />
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.allWordsStartsUpperCase()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          all words starts upper case
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.swapAllWords()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          swap all words
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.divideTextOnCertainCharacters()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          divide the text into parts of no more than <input class="form-control" type="text" placeholder="1000" id="lenghtOfTextAfterDividing" style="width: 70px; height: 23px; display: inline" /> characters
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.divideTextOnEqualParts()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          divide the text into equal parts with a length of <input class="form-control" type="text" placeholder="10" id="lenghtOfEqualParts" style="width: 70px; height: 23px; display: inline" /> characters
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.addAtEndOfTheWordsCharacter()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          add at end of <input class="form-control" type="text" placeholder="10" id="numberOfWords" style="width: 70px; height: 23px; display: inline" /> words character <input class="form-control" type="text" placeholder="," id="characterToAdding" style="width: 60px; height: 23px; display: inline" /> (random)
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithSimpleQuotes()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforSimpleQuotes" style="width: 70px; height: 23px; display: inline" /> words with single quotes (random)
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithDoubleQuotes()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforDoubleQuotes" style="width: 70px; height: 23px; display: inline" /> words with double quotes (random)
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithTriangleBrackets()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforTriangleBrackets" style="width: 70px; height: 23px; display: inline" /> words with triangle brackets (random)
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithSquareBrackets()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforSquareBrackets" style="width: 70px; height: 23px; display: inline" /> words with square brackets (random)
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithBackticks()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforBackticks" style="width: 70px; height: 23px; display: inline" /> words with backticks (random)
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithCurlyBrackets()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforCurlyBrackets" style="width: 70px; height: 23px; display: inline" /> words with curly brackets (random)
-        </div>
-      </div>
-      <div class="d-flex flex-row my-2">
-        <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithRoundBrackets()">PROCESS</button>
-        <div class="align-self-center mx-2">
-          wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforRoundBrackets" style="width: 70px; height: 23px; display: inline" /> words with round brackets (random)
+        <div class="card">
+          <div class="card-header bg-info" id="headingThree">
+            <h5 class="mb-0"><button class="btn btn-link text-light collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">PROCESS</button></h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.allWordsStartsUpperCase()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  all words starts upper case
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.swapAllWords()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  swap all words
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.divideTextOnCertainCharacters()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  divide the text into parts of no more than <input class="form-control" type="text" placeholder="1000" id="lenghtOfTextAfterDividing" style="width: 70px; height: 23px; display: inline" /> characters
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.divideTextOnEqualParts()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  divide the text into equal parts with a length of <input class="form-control" type="text" placeholder="10" id="lenghtOfEqualParts" style="width: 70px; height: 23px; display: inline" /> characters
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.addAtEndOfTheWordsCharacter()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  add at end of <input class="form-control" type="text" placeholder="10" id="numberOfWords" style="width: 70px; height: 23px; display: inline" /> words character <input class="form-control" type="text" placeholder="," id="characterToAdding" style="width: 60px; height: 23px; display: inline" /> (random)
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithSimpleQuotes()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforSimpleQuotes" style="width: 70px; height: 23px; display: inline" /> words with single quotes (random)
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithDoubleQuotes()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforDoubleQuotes" style="width: 70px; height: 23px; display: inline" /> words with double quotes (random)
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithTriangleBrackets()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforTriangleBrackets" style="width: 70px; height: 23px; display: inline" /> words with triangle brackets (random)
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithSquareBrackets()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforSquareBrackets" style="width: 70px; height: 23px; display: inline" /> words with square brackets (random)
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithBackticks()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforBackticks" style="width: 70px; height: 23px; display: inline" /> words with backticks (random)
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithCurlyBrackets()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforCurlyBrackets" style="width: 70px; height: 23px; display: inline" /> words with curly brackets (random)
+                </div>
+              </div>
+              <div class="d-flex flex-row my-2">
+                <button type="button" class="btn btn-info align-self-center" onclick="textProcess.wrapTheWordsWithRoundBrackets()">PROCESS</button>
+                <div class="align-self-center mx-2">
+                  wrap <input class="form-control" type="text" placeholder="10" id="numberOfWordsforRoundBrackets" style="width: 70px; height: 23px; display: inline" /> words with round brackets (random)
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -187,9 +216,8 @@
         <li>simple text statistics</li>
         <li>... some other features in plans</li>
       </ul>
-    </div>  
-  </div>
-  <!-- Optional JavaScript -->
+    </div>
+  </div><!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> 
