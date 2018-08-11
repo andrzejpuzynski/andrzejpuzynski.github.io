@@ -254,4 +254,44 @@
 
             $('.textToProcess').val(`${result.join(" ")}`);
         },
+        optimizePairs: function () {
+            var $textToProcess = $('.textToProcess').val();
+            var inputArray = $textToProcess.split(" ");
+            var maxLength = 10;
+            var outputString = "";
+
+
+            while (inputArray.length !== 0) {
+          
+                var tempIndex = Math.floor(Math.random()*inputArray.length);
+                var lastCharacterOfOutputString = outputString.slice(-1);
+                var outputStringIsEmpty = outputString.length === 0;
+                var isPairToConnected = inputArray.filter(item => outputString.slice(-1) === item.slice(0,1)).length > 0;
+                var lastWordOfStringIsShorterThanMaxLength = outputString.split(" ").slice(-1)[0].length < maxLength;
+
+                if (outputStringIsEmpty) {
+              
+                    outputString = outputString.concat(inputArray.filter((item, idx) => idx === tempIndex).toString());
+                    inputArray = inputArray.filter((item, idx) => idx !== tempIndex);
+
+                } else if (lastWordOfStringIsShorterThanMaxLength && isPairToConnected) {
+             
+                    while(inputArray.filter((item, idx) => item.slice(0,1) === lastCharacterOfOutputString && idx === tempIndex).length === 0) {
+                        var tempIndex = Math.floor(Math.random()*inputArray.length);
+                    }
+
+                    outputString = outputString.concat(inputArray.filter((item, idx) => item.slice(0,1) === lastCharacterOfOutputString && idx === tempIndex).toString().slice(1));
+                    inputArray = inputArray.filter((item, idx) => idx !== tempIndex);
+             
+                } else {
+              
+                    outputString = outputString.concat(" ").concat(inputArray.filter((item, idx) => idx === tempIndex).toString());
+                    inputArray = inputArray.filter((item, idx) => idx !== tempIndex);
+                }
+
+            }
+
+            $('.textToProcess').val(outputString);
+
+        }
     }
