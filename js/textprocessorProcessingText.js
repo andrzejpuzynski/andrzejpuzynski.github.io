@@ -3,31 +3,37 @@
          	var $textToProcess = $('.textToProcess').val().replace(/<[A-Za-z0-9\/]+\b[^>]*>/gm,'');
             	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
 		},
         clearNbsp: function () {
             var $textToProcess = $('.textToProcess').val().replace(/&nbsp;/gm, '');
             $('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
         },
         clearTabs: function () {
             var $textToProcess = $('.textToProcess').val().replace(/\t/gm,'');
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
 		},
         clearMultiSpaces: function () {
             var $textToProcess = $('.textToProcess').val().replace(/ +/gm, ' ').trim();
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
 		},
         clearBlankLines: function () {
             var $textToProcess = $('.textToProcess').val().replace(/\s+\n/gm, '\n');
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
 		},
         clearLineBreak: function () {
             var $textToProcess = $('.textToProcess').val().replace(/\n/gm, '').trim();
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
         }
     }
     
@@ -36,11 +42,13 @@
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => ar.indexOf(i) === idx).join(` `);
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
         },
         wordsIncludingInLongerWords: function () {
             var $textToProcess = $('.textToProcess').val().split(' ').filter((i, idx, ar) => !ar.some((y, idy) => y.includes(i) && y.length > i.length) ).join(' ');
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
         },
         wordsNotIncludingFirstLetterFromInput: function () {
             var $firstLetterOfWord = $('#firstLetterOfWord').val();
@@ -48,6 +56,7 @@
             .filter(i => $firstLetterOfWord.includes(i.slice(0,1)) ).join(' ');
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
         },
         wordsIncludingFirstLetterFromInput: function () {
             var $firstLetterOfWordToIncluding = $('#firstLetterOfWordToIncluding').val();
@@ -55,6 +64,7 @@
             .filter(i => !$firstLetterOfWordToIncluding.includes(i.slice(0,1)) ).join(' ');
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess);
+            stats();
         }
     }
     
@@ -63,6 +73,7 @@
             var $textToProcess = $('.textToProcess').val().split(' ').map(i => i.slice(0, 1).toUpperCase().concat(i.slice(1))).join(` `);
         	$('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess);
+            stats();
         },
         swapAllWords: function () {
             var result = [];
@@ -76,6 +87,7 @@
                         
             $('.textToProcess').empty();
             $('.textToProcess').val(result.join(` `));
+            stats();
         },
         divideTextOnCertainCharacters: function () {
             var result = [[]];
@@ -98,6 +110,7 @@
             result = result.map(i => i.join(' '));
             $('.textToProcess').empty();
             $('.textToProcess').val(result.join(`\n\n`));
+            stats();
         },
         divideTextOnEqualParts: function () {
             var result = "";
@@ -111,6 +124,7 @@
 
             $('.textToProcess').empty();
             $('.textToProcess').val(result.trim());
+            stats();
         },
         addAtEndOfTheWordsCharacter: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -123,6 +137,7 @@
             }
             $('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
         wrapTheWordsWithSimpleQuotes: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -143,6 +158,7 @@
             }
             $('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
         wrapTheWordsWithDoubleQuotes: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -163,6 +179,7 @@
             }
             $('.textToProcess').empty();
         	$('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
         wrapTheWordsWithTriangleBrackets: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -174,6 +191,7 @@
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
         wrapTheWordsWithSquareBrackets: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -185,6 +203,7 @@
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
         wrapTheWordsWithBackticks: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -196,6 +215,7 @@
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
         wrapTheWordsWithCurlyBrackets: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -207,6 +227,7 @@
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
         wrapTheWordsWithRoundBrackets: function () {
             var $textToProcess = $('.textToProcess').val().split(' ');
@@ -218,6 +239,7 @@
             }
             $('.textToProcess').empty();
             $('.textToProcess').val($textToProcess.join(' '));
+            stats();
         },
     }
 
@@ -253,6 +275,7 @@
             }
 
             $('.textToProcess').val(`${result.join(" ")}`);
+            stats();
         },
         optimizePairs: function () {
             var $textToProcess = $('.textToProcess').val();
@@ -292,6 +315,6 @@
             }
 
             $('.textToProcess').val(outputString);
-
+            stats();
         }
     }

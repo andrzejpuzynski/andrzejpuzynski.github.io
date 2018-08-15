@@ -25,10 +25,11 @@
                                 <td style="width: 80px">First</br>Upper</td>
                             </tr>
                             ${$listOfLettersStatistic}`);
+        console.log(`statistic at ${new Date()}`);
 
     }
     
     $(".textToProcess").keyup(x => stats());
-    $(".textToProcess").mouseenter(x => stats());
     $(".textToProcess").change(x => stats());
-    $("button").click(x => stats());
+    // $(".textToProcess").mouseenter(x => stats());
+    // $("button").click(x => stats());
