@@ -293,6 +293,7 @@ main {
 
 }
 
+.front-textprocessor,
 .front-dreamers,
 .front-snake,
 .front-szortal,
@@ -302,6 +303,7 @@ main {
     background-position: center;
 }
 
+.front-textprocessor:hover,
 .front-dreamers:hover,
 .front-snake:hover,
 .front-szortal:hover,
@@ -311,6 +313,9 @@ main {
 }
 
 @media screen and (min-width: 992px) {
+    .front-textprocessor {
+        background-image: url("../images/front-textprocessor.jpg");
+    }
     .front-dreamers {
         background-image: url("../images/front-dreamers.jpg");
     }
