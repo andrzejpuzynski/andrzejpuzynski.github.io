@@ -7,10 +7,10 @@
 }
 
 html {
-  font-size: 36%;
+  font-size: 50%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     html {
         font-size: 62.5%;
     }
@@ -105,7 +105,7 @@ main {
 .navigation-buttons > ul > li:hover,
 .navigation-buttons > ul > li > a:hover{
     color: #006dff;
-    transform: scale(1.08);
+    transform: scale(1.05);
     text-decoration: none;
 }
 
@@ -190,7 +190,7 @@ main {
     margin-bottom: 1em;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     #skills > li {
         width: 50%;
     }
@@ -223,6 +223,7 @@ main {
     text-align: center;
     border: 3px solid rgba(255, 255, 255, 1.0);
     background-color: rgba(0, 0, 0, 1.0);
+    height: 390px;
 }
 
 @media screen and (min-width: 992px) {
@@ -270,7 +271,7 @@ main {
 }
 
 .portfolio-box > p {
-    font-size: 4.0rem;
+    font-size: 5.6rem;
     font-weight: 200;
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -283,6 +284,7 @@ main {
     }
     .portfolio-box:hover > p {
         visibility: visible;
+        font-size: 3.4rem;
         color: rgb(255, 255, 255);
     }
 }
