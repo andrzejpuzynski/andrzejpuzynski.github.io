@@ -1,3 +1,5 @@
+@import "styles-less.css";
+
 * {
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -389,39 +391,6 @@ main {
     transform: scale(1.1);
 }
 
-.footer-bar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    line-height: 1.2em;
-    font-weight: 200;
-    text-align: center;
-    z-index: 100;
-}
-
-.footer-bar-container > ul > li {
-    display: inline-block;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-left: 8px;
-    margin-right: 8px;
-    font-size: 2.8rem;
-}
-
-.footer-bar-container > ul > li > a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer-bar-container > ul > li > a > i:hover {
-    transform: scale(1.10);
-    color: #006dff;
-}
-
-.footer-bar-container > ul > li > p {
-    font-size: 0.7em;
-    font-weight: 100;
-}
 
 button,
 input,
