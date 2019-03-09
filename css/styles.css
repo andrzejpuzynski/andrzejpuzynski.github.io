@@ -181,18 +181,26 @@ main {
     text-align: left;
 }
 
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #skills > li {
-    float: left;
-    width: 100%;
+    width: 50%;
     text-align: center;
     list-style: none;
     font-weight: 300;
     margin-bottom: 1em;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 991px) {
+    #skills {
+        flex-direction: column;
+    }
     #skills > li {
-        width: 50%;
+        width: 100%;
     }
 }
 

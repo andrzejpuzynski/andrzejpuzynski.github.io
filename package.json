@@ -1,0 +1,23 @@
+{
+  "name": "andrzejpuzynski.github.io",
+  "version": "1.0.0",
+  "description": "### | PERSONAL PORTFOLIO |",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrzejpuzynski/andrzejpuzynski.github.io.git"
+  },
+  "author": "Andrzej Puzynski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrzejpuzynski/andrzejpuzynski.github.io/issues"
+  },
+  "homepage": "https://github.com/andrzejpuzynski/andrzejpuzynski.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0"
+  }
+}
