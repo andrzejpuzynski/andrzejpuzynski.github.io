@@ -1,0 +1,429 @@
+//Colors
+@black: #000;
+@white: #fff;
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+  font-size: 50%;
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+
+.color-bright {
+    color: #ffffff;
+}
+
+.color-middle {
+    color: #7e7e7e;
+}
+
+.color-dark {
+    color: #000000;
+}
+
+body {
+    background-color: #7e7e7e;
+    background-image: url("http://sf.co.ua/14/03/wallpaper-1833811.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+}
+
+header,
+footer {
+    color: @white;
+    background-color: @black;
+}
+
+main {
+    color: @black;
+}
+
+#about-me,
+#portfolio,
+#contact-me {
+    background-color: rgba(255,255,255,0.85);
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    font-size: 2.6rem;
+    font-weight: 400;
+    z-index: 100;
+}
+
+.navigation-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.navigation-logo > a > img {
+    border-radius: 6px;
+    margin-top: 0.6em;
+    margin-left: 0.6em;
+    height: 2em;
+    width: 2em;
+    position: absolute;
+}
+
+.navigation-logo > a {
+    color: #417aff;
+    text-decoration: none;
+}
+
+.navigation-buttons {
+    position: absolute;
+    right: 0px;
+}
+
+.navigation-buttons > ul > li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navigation-buttons > ul > li > a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navigation-buttons > ul > li:hover,
+.navigation-buttons > ul > li > a:hover{
+    color: #006dff;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.content {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4.6em;
+}
+
+#intro,
+#about-me,
+#portfolio,
+#contact-me {
+    min-height: 100vh;
+    padding: 3em 4em 0 4em;
+    position: relative;
+}
+
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.intro > h1 {
+    font-size: 7.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.intro > h2 {
+    margin-top: 2em;
+    font-size: 3.6rem;
+    font-weight: 100;
+    letter-spacing: 4px;
+    text-align: center;
+    color: white;
+}
+
+.about-me > h2,
+.portfolio > h2,
+.contact-me > h2 {
+    font-size: 7.2rem;
+    font-weight: 200;
+    text-align: center;
+    margin: 1em 0 1em 0;
+}
+
+.about-me > h3 {
+    font-size: 4.0rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0.4em;
+}
+
+.about-me > p,
+.about-me > ul > li {
+    font-size: 4.0rem;
+    font-weight: 200;
+}
+
+.about-me > p {
+    text-align: center;
+}
+
+.about-me > ul > li {
+    text-align: left;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#skills > li {
+    width: 50%;
+    text-align: center;
+    list-style: none;
+    font-weight: 300;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 991px) {
+    #skills {
+        flex-direction: column;
+    }
+    #skills > li {
+        width: 100%;
+    }
+}
+
+#skills > li > div > img {
+    height: 70px;
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+}
+
+#skills > li > div > a > img {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    max-width: 100%;
+}
+
+.clear {
+    clear: left;
+    display: block;
+}
+
+// Portfolio start
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+
+    h2 {
+        width: 100%;
+    }
+
+    .portfolio-item {
+        width: 95%;
+        margin-bottom:  4em;
+        padding: 1em 2em;
+        border-radius: 10px;
+        text-align: center;
+        border: 3px solid rgba(255, 255, 255, 1.0);
+        background-color: rgba(0, 0, 0, 1.0);
+        height: 390px; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media screen and (min-width: 992px) {
+            width: 45%;
+            &:hover {
+                background-image: url("");
+                background-color: rgb(0, 0, 0);
+                animation-name: inbox;
+                transition-duration: 800ms;
+                border: 3px solid rgba(255, 255, 255, 1.0);
+                a {
+                    visibility: visible;
+                }
+                p {
+                    visibility: visible;
+                    font-size: 3.4rem;
+                    color: #FFF;
+                    a {
+                        font-size: 3.4rem;
+                        font-weight: 400;
+                        text-decoration: none;
+                        color: #006dff; 
+                    }  
+                }
+            }
+        
+            @keyframes inbox {
+                0% {
+                 background-color: rgba(0, 0, 0, 0.0);
+                }
+                100% {
+                 background-color: rgba(0, 0, 0, 1.0);
+                }
+            }
+        }
+        a {
+            font-size: 6.0rem;
+            font-weight: 600;
+            line-height: 1.6em;
+            text-decoration: none;
+            color: #006dff;
+            margin-top: 1em;
+            margin-bottom: 2em;
+            visibility: visible;
+        
+            @media screen and (min-width: 992px) {
+                visibility: hidden;
+            }
+
+        }
+
+        p {
+            font-size: 4.0rem;
+            font-weight: 200;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            visibility: visible;
+
+            a {
+                font-size: 4.0rem;
+                font-weight: 400;
+            }
+            
+            @media screen and (min-width: 992px) {
+                visibility: hidden;
+            } 
+        }
+    }
+
+    .front-textprocessor {
+        @media screen and (min-width: 992px) {
+            background-image: url("../images/front-textprocessor.jpg");
+        }
+    }
+
+    .front-snake {
+        @media screen and (min-width: 992px) {
+            background-image: url("../images/front-snake.jpg");
+        }
+    }
+
+    .front-szortal {
+        @media screen and (min-width: 992px) {
+            background-image: url("../images/front-szortal.jpg");
+        }
+    }
+}
+// Portfolio end
+
+// Contact me start
+.contact-me {
+
+    form {
+
+        & > * {
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #7e7e7e;
+            border-style: solid;
+            border-radius: 0.4em;
+            font-size: 4.0rem;
+            font-weight: 200;
+            line-height: 1.4em;
+            margin-bottom: 0.8em;
+            outline: none;
+        }
+
+        input {
+            height: 1.4em;
+            width: 100%;
+            text-align: left;
+            padding-left: 0.4em;
+        }
+
+        textarea {
+            width: 100%;
+            text-align: left;
+            padding-left: 0.4em;
+        }
+
+        button {
+            text-align: center;
+            color: white;
+            padding: 0 0.4em;
+            display: inline-block;
+            background-color: #006dff;
+            cursor: pointer;
+            transition: all 0.5s;
+
+        &:active {
+            color: white;
+            text-align: center;
+            padding: 0 0.4em;
+            display: inline-block;
+            background-color: #006dff;
+            transform: scale(1.1);
+        }
+        }
+    }
+}
+// Contact me end
+
+
+//Footer start
+.footer-bar {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 5.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    .footer-bar-social {
+        margin: 0 8px;
+        font-size: 2.8rem;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        &:hover {
+            color: #006dff;
+            i {
+                transform: scale(1.2);
+                transition-duration: 50ms;
+                transition-timing-function: ease;
+            }
+        }
+      }
+    }
+
+    p {
+        margin: 0 8px;
+        font-size: 2rem;
+        font-weight: 100;
+    }
+}
+//Footer end

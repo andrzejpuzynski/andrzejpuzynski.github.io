@@ -11,10 +11,11 @@ function serve(done) {
 	done();
 }
 
+
 function lessToCss() {
-	return src('less/*.*')
-	.pipe(less())
-	.pipe(dest('css/'));
+	return src('less/styles.less')
+    .pipe(less())
+	.pipe(dest('css/'))
 }
 
 function reload(done) {
@@ -24,8 +25,10 @@ function reload(done) {
 
 function watchFiles(done) {
 	serve(done);
-	watch('less/*.*', { events: 'all'}, series(lessToCss));
-	watch('**/*.*', { events: 'all' }, series(reload));
+	watch('less/*.*', { events: 'all' }, series(lessToCss, reload));
+	watch('**/*.*', { events: 'all' }, reload);
 }
 
 exports.default = watchFiles;
+exports.lessToCss = lessToCss;
+exports.reload = reload;
