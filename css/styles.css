@@ -215,7 +215,19 @@ main {
   align-self: flex-start;
   width: 100%;
   margin-bottom: 20px;
-  box-shadow: 0 0 23px 0 #006dff;
+  animation-name: imageshadow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+}
+@keyframes imageshadow {
+  0% {
+    box-shadow: 0 0 23px 0 #006dff;
+  }
+  100% {
+    box-shadow: 0 0 0px 0 #006dff;
+  }
 }
 .portfolio .portfolio-item a {
   align-self: flex-start;
