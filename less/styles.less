@@ -18,7 +18,11 @@
 }
 
 html {
-  font-size: 50%;
+    font-size: 40%;
+
+    @media @desktop {
+        font-size: 50%;
+    }
 }
 
 body {
@@ -48,6 +52,7 @@ main {
 }
 
 .navigation {
+
     position: fixed;
     top: 0;
     width: 100%;
@@ -76,43 +81,128 @@ main {
         }
 
         .navigation-buttons {
-
             ul {
                 list-style-type: none;
+                box-sizing: border-box;
                 display: flex;
                 
                 li {
                     padding-right: 15px;
 
+                    &:not(:last-child) {
+                        display: none;
+                    }
+
+                    @media @desktop {
+                        &:not(:last-child) {
+                            display: block;
+                        }
+                        &:last-child {
+                            display: none;
+                        }
+
+
                     &:hover {
-                        // transform: scale(1.05);
                         display: flex;
                         justify-content: center;
                         flex-wrap: wrap;
-                        &:after {
-                            content: "";
-                            width: 100%;
-                            border-bottom: 3px solid @link;
-                            transform: translateY(-4px);
-                            animation-name: navbutton;
-                            animation-duration: 300ms;
-                            animation-timing-function: easy-out;
 
-                            @keyframes navbutton {
-                                0% { 
-                                    width: 0%;
-                                }
-                                100% {
-                                    width: 100%; 
+                        &:not(:last-child) {
+                        
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                border-bottom: 4px solid @link;
+                                transform: translateY(-4px);
+                                animation-name: navbutton;
+                                animation-duration: 300ms;
+                                animation-timing-function: easy-out;
+    
+                                @keyframes navbutton {
+                                    0% { 
+                                        width: 0%;
+                                    }
+                                    100% {
+                                        width: 100%; 
+                                    }
                                 }
                             }
                         }
-                    }                  
+                    } 
+                                        }                 
 
                     a {
                        color: @white;
                        text-decoration: none;
+
+                       .bars {
+                            margin-top: 0.6em;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-content: space-around;
+                            height: 2em;
+                            width: 2em;
+
+
+                            .bar {
+                                background-color: @white;
+                                height: 3px;
+                                width: 80%;
+                            }
+                       }
                     } 
+                }
+            }
+        }
+    }
+
+    &.mobile {
+        height: 100vh;
+        display: flex;
+        animation-name: navi;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in;
+
+        @keyframes navi {
+            0% { height: 3em; }
+        }
+        .navigation-container {
+            .navigation-logo {
+                order: 1;
+            }
+            .navigation-buttons {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                ul {
+                    height: 100vh;
+                    z-index: 101;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: space-between;
+                    padding: 30% 0;
+
+                    li {
+                        text-align: center;
+
+
+                        &:not(:last-child) {
+                            order: 3;
+                            color: red;
+                            width: 100%;
+                            display: block;
+                            margin: 40px 0;
+                        }
+                        &:last-child {
+                            order: 2;
+                            text-align: right;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+                    }
                 }
             }
         }
@@ -292,7 +382,6 @@ main {
             @keyframes imageshadow {
                 0% { box-shadow: 0 0 23px 0 @link; }
                 100% { box-shadow: 0 0 0px 0 @link;  }
-                // 100% { box-shadow: 0 0 0px 0 @link;  }
             }
         }
         

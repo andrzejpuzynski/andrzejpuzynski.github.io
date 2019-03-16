@@ -6,7 +6,12 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 50%;
+  font-size: 40%;
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 50%;
+  }
 }
 body {
   background-color: #000;
@@ -55,36 +60,108 @@ main {
 }
 .navigation .navigation-container .navigation-buttons ul {
   list-style-type: none;
+  box-sizing: border-box;
   display: flex;
 }
 .navigation .navigation-container .navigation-buttons ul li {
   padding-right: 15px;
 }
-.navigation .navigation-container .navigation-buttons ul li:hover {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.navigation .navigation-container .navigation-buttons ul li:not(:last-child) {
+  display: none;
 }
-.navigation .navigation-container .navigation-buttons ul li:hover:after {
-  content: "";
-  width: 100%;
-  border-bottom: 3px solid #006dff;
-  transform: translateY(-4px);
-  animation-name: navbutton;
-  animation-duration: 300ms;
-  animation-timing-function: easy-out;
-}
-@keyframes navbutton {
-  0% {
-    width: 0%;
+@media only screen and (min-width: 992px) {
+  .navigation .navigation-container .navigation-buttons ul li:not(:last-child) {
+    display: block;
   }
-  100% {
+  .navigation .navigation-container .navigation-buttons ul li:last-child {
+    display: none;
+  }
+  .navigation .navigation-container .navigation-buttons ul li:hover {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .navigation .navigation-container .navigation-buttons ul li:hover:not(:last-child):after {
+    content: "";
     width: 100%;
+    border-bottom: 4px solid #006dff;
+    transform: translateY(-4px);
+    animation-name: navbutton;
+    animation-duration: 300ms;
+    animation-timing-function: easy-out;
+  }
+  @keyframes navbutton {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
   }
 }
 .navigation .navigation-container .navigation-buttons ul li a {
   color: #fff;
   text-decoration: none;
+}
+.navigation .navigation-container .navigation-buttons ul li a .bars {
+  margin-top: 0.6em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  height: 2em;
+  width: 2em;
+}
+.navigation .navigation-container .navigation-buttons ul li a .bars .bar {
+  background-color: #fff;
+  height: 3px;
+  width: 80%;
+}
+.navigation.mobile {
+  height: 100vh;
+  display: flex;
+  animation-name: navi;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in;
+}
+@keyframes navi {
+  0% {
+    height: 3em;
+  }
+}
+.navigation.mobile .navigation-container .navigation-logo {
+  order: 1;
+}
+.navigation.mobile .navigation-container .navigation-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.navigation.mobile .navigation-container .navigation-buttons ul {
+  height: 100vh;
+  z-index: 101;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding: 30% 0;
+}
+.navigation.mobile .navigation-container .navigation-buttons ul li {
+  text-align: center;
+}
+.navigation.mobile .navigation-container .navigation-buttons ul li:not(:last-child) {
+  order: 3;
+  color: red;
+  width: 100%;
+  display: block;
+  margin: 40px 0;
+}
+.navigation.mobile .navigation-container .navigation-buttons ul li:last-child {
+  order: 2;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .content {
   max-width: 1280px;

@@ -32,7 +32,7 @@
 
 <body data-spy="scroll">
 
-<header class="navigation">
+<header class="navigation" id="navigation">
     <div class="navigation-container">
         <div class="navigation-logo">
             <a href="#intro">
@@ -41,11 +41,20 @@
         </div>
         <nav class="navigation-buttons">
             <ul>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#portfolio">My Portfolio</a></li>
-                <li><a href="#contact-me">Contact Me</a></li>
+                <li><a href="#about-me" onclick="closeMenu()">About Me</a></li>
+                <li><a href="#portfolio" onclick="closeMenu()">My Portfolio</a></li>
+                <li><a href="#contact-me" onclick="closeMenu()">Contact Me</a></li>
+                <li><a href="javascript:void(0);" onclick="mobileMenu()">
+                    <div class="bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </a>
+                </li>
             </ul>
         </nav>
+        
     </div>
 </header>
 
@@ -133,6 +142,7 @@
     </div>
     <p>© Andrzej Puzyński 2017</p>
 </footer>
+<script type="text/javascript" src="js/mobilemenu.js"></script>
 
 </body>
 
