@@ -15,7 +15,7 @@ function serve(done) {
 function lessToCss() {
 	return src('less/styles.less')
     .pipe(less())
-	.pipe(dest('css/'))
+	.pipe(dest('css/'));
 }
 
 function reload(done) {

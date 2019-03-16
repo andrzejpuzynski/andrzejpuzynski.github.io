@@ -1,9 +1,9 @@
 //Colors
 @white: #fff;
+@white85:#fffd;
 @black: #000;
-
 @link: #006dff;
-@hline: #aaa;
+
 
 
 //RWD
@@ -21,21 +21,8 @@ html {
   font-size: 50%;
 }
 
-
-.color-bright {
-    color: #ffffff;
-}
-
-.color-middle {
-    color: #7e7e7e;
-}
-
-.color-dark {
-    color: #000000;
-}
-
 body {
-    background-color: #7e7e7e;
+    background-color: @black;
     background-image: url("http://sf.co.ua/14/03/wallpaper-1833811.jpg");
     background-position: center;
     background-attachment: fixed;
@@ -57,7 +44,7 @@ main {
 #about-me,
 #portfolio,
 #contact-me {
-    background-color: rgba(255,255,255,0.85);
+    background-color: @white85;
 }
 
 .navigation {
@@ -69,50 +56,69 @@ main {
     font-size: 2.6rem;
     font-weight: 400;
     z-index: 100;
+    display: flex;
+    justify-content: center;
+
+    .navigation-container {
+        flex: 0 1 1280px;
+        display: flex;
+        justify-content: space-between;
+
+        .navigation-logo {
+            a {    
+                img {
+                    border-radius: 6px;
+                    margin: 0.6em;
+                    height: 2em;
+                    width: 2em;
+                }
+            }
+        }
+
+        .navigation-buttons {
+
+            ul {
+                list-style-type: none;
+                display: flex;
+                
+                li {
+                    padding-right: 15px;
+
+                    &:hover {
+                        // transform: scale(1.05);
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        &:after {
+                            content: "";
+                            width: 100%;
+                            border-bottom: 3px solid @link;
+                            transform: translateY(-4px);
+                            animation-name: navbutton;
+                            animation-duration: 300ms;
+                            animation-timing-function: easy-out;
+
+                            @keyframes navbutton {
+                                0% { 
+                                    width: 0%;
+                                }
+                                100% {
+                                    width: 100%; 
+                                }
+                            }
+                        }
+                    }                  
+
+                    a {
+                       color: @white;
+                       text-decoration: none;
+                    } 
+                }
+            }
+        }
+    }
 }
 
-.navigation-container {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-}
-
-.navigation-logo > a > img {
-    border-radius: 6px;
-    margin-top: 0.6em;
-    margin-left: 0.6em;
-    height: 2em;
-    width: 2em;
-    position: absolute;
-}
-
-.navigation-logo > a {
-    color: #417aff;
-    text-decoration: none;
-}
-
-.navigation-buttons {
-    position: absolute;
-    right: 0px;
-}
-
-.navigation-buttons > ul > li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.navigation-buttons > ul > li > a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.navigation-buttons > ul > li:hover,
-.navigation-buttons > ul > li > a:hover{
-    color: #006dff;
-    transform: scale(1.05);
-    text-decoration: none;
-}
 
 .content {
     max-width: 1280px;
@@ -152,7 +158,7 @@ main {
         font-weight: 600;
         letter-spacing: 2px;
         text-align: center;
-        color: white;
+        color: @white;
         text-shadow: 2px 2px black;
     }
 
@@ -163,7 +169,7 @@ main {
         font-weight: 100;
         letter-spacing: 8px;
         text-align: center;
-        color: white;
+        color: @white;
     }
 }
 
@@ -329,10 +335,6 @@ main {
     form {
 
         & > * {
-            border-bottom: 1px;
-            border-left: 1px;
-            border-color: #7e7e7e;
-            border-style: solid;
             border-radius: 0.4em;
             font-size: 4.0rem;
             font-weight: 200;
@@ -356,10 +358,10 @@ main {
 
         button {
             text-align: center;
-            color: white;
+            color: @white;
             padding: 0 0.4em;
             display: inline-block;
-            background-color: #006dff;
+            background-color: @link;
             cursor: pointer;
             transition: all 0.5s;
 
@@ -368,7 +370,7 @@ main {
                 text-align: center;
                 padding: 0 0.4em;
                 display: inline-block;
-                background-color: #006dff;
+                background-color: @link;
                 transform: scale(1.1);
             }
         }
@@ -394,10 +396,10 @@ main {
         font-size: 2.8rem;
 
       a {
-        color: #ffffff;
+        color: @white;
         text-decoration: none;
         &:hover {
-            color: #006dff;
+            color: @link;
             i {
                 transform: scale(1.2);
                 transition-duration: 50ms;
@@ -413,4 +415,3 @@ main {
         font-weight: 100;
     }
 }
-//Footer end

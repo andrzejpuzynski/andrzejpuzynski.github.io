@@ -8,17 +8,8 @@
 html {
   font-size: 50%;
 }
-.color-bright {
-  color: #ffffff;
-}
-.color-middle {
-  color: #7e7e7e;
-}
-.color-dark {
-  color: #000000;
-}
 body {
-  background-color: #7e7e7e;
+  background-color: #000;
   background-image: url("http://sf.co.ua/14/03/wallpaper-1833811.jpg");
   background-position: center;
   background-attachment: fixed;
@@ -37,7 +28,7 @@ main {
 #about-me,
 #portfolio,
 #contact-me {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: #fffd;
 }
 .navigation {
   position: fixed;
@@ -48,41 +39,51 @@ main {
   font-size: 2.6rem;
   font-weight: 400;
   z-index: 100;
+  display: flex;
+  justify-content: center;
 }
-.navigation-container {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
+.navigation .navigation-container {
+  flex: 0 1 1280px;
+  display: flex;
+  justify-content: space-between;
 }
-.navigation-logo > a > img {
+.navigation .navigation-container .navigation-logo a img {
   border-radius: 6px;
-  margin-top: 0.6em;
-  margin-left: 0.6em;
+  margin: 0.6em;
   height: 2em;
   width: 2em;
-  position: absolute;
 }
-.navigation-logo > a {
-  color: #417aff;
-  text-decoration: none;
+.navigation .navigation-container .navigation-buttons ul {
+  list-style-type: none;
+  display: flex;
 }
-.navigation-buttons {
-  position: absolute;
-  right: 0px;
+.navigation .navigation-container .navigation-buttons ul li {
+  padding-right: 15px;
 }
-.navigation-buttons > ul > li {
-  display: inline-block;
-  margin-right: 10px;
+.navigation .navigation-container .navigation-buttons ul li:hover {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.navigation-buttons > ul > li > a {
-  color: #ffffff;
-  text-decoration: none;
+.navigation .navigation-container .navigation-buttons ul li:hover:after {
+  content: "";
+  width: 100%;
+  border-bottom: 3px solid #006dff;
+  transform: translateY(-4px);
+  animation-name: navbutton;
+  animation-duration: 300ms;
+  animation-timing-function: easy-out;
 }
-.navigation-buttons > ul > li:hover,
-.navigation-buttons > ul > li > a:hover {
-  color: #006dff;
-  transform: scale(1.05);
+@keyframes navbutton {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.navigation .navigation-container .navigation-buttons ul li a {
+  color: #fff;
   text-decoration: none;
 }
 .content {
@@ -120,7 +121,7 @@ main {
   font-weight: 600;
   letter-spacing: 2px;
   text-align: center;
-  color: white;
+  color: #fff;
   text-shadow: 2px 2px black;
 }
 .intro h2 {
@@ -130,7 +131,7 @@ main {
   font-weight: 100;
   letter-spacing: 8px;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 .about-me h3 {
   font-size: 4rem;
@@ -271,10 +272,6 @@ main {
   background: none;
 }
 .contact-me form > * {
-  border-bottom: 1px;
-  border-left: 1px;
-  border-color: #7e7e7e;
-  border-style: solid;
   border-radius: 0.4em;
   font-size: 4rem;
   font-weight: 200;
@@ -295,7 +292,7 @@ main {
 }
 .contact-me form button {
   text-align: center;
-  color: white;
+  color: #fff;
   padding: 0 0.4em;
   display: inline-block;
   background-color: #006dff;
@@ -326,7 +323,7 @@ main {
   font-size: 2.8rem;
 }
 .footer-bar .footer-bar-social a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
 }
 .footer-bar .footer-bar-social a:hover {
