@@ -106,18 +106,18 @@ main {
   text-decoration: none;
 }
 .navigation .navigation-container .navigation-buttons ul li a .bars {
-  margin-top: 0.6em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-around;
-  height: 2em;
-  width: 2em;
+  height: 1.4em;
+  width: 1.4em;
+  margin-top: 0.8em;
 }
 .navigation .navigation-container .navigation-buttons ul li a .bars .bar {
   background-color: #fff;
-  height: 3px;
-  width: 80%;
+  height: 2px;
+  width: 100%;
 }
 .navigation.mobile {
   height: 100vh;
@@ -164,6 +164,19 @@ main {
   position: absolute;
   top: 0;
   right: 0;
+}
+.navigation.mobile .navigation-container .navigation-buttons ul li a .bars {
+  align-content: center;
+  transform: rotate(45deg);
+}
+.navigation.mobile .navigation-container .navigation-buttons ul li a .bars .bar:nth-child(1n) {
+  transform: translateY(2px) rotate(90deg);
+}
+.navigation.mobile .navigation-container .navigation-buttons ul li a .bars .bar:nth-child(2n) {
+  visibility: hidden;
+}
+.navigation.mobile .navigation-container .navigation-buttons ul li a .bars .bar:nth-child(3n) {
+  transform: translateY(-2px);
 }
 .content {
   max-width: 1280px;

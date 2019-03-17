@@ -139,19 +139,19 @@ main {
                        text-decoration: none;
 
                        .bars {
-                            margin-top: 0.6em;
                             display: flex;
                             flex-wrap: wrap;
                             justify-content: center;
                             align-content: space-around;
-                            height: 2em;
-                            width: 2em;
+                            height: 1.4em;
+                            width: 1.4em;
+                            margin-top: 0.8em;
 
 
                             .bar {
                                 background-color: @white;
-                                height: 3px;
-                                width: 80%;
+                                height: 2px;
+                                width: 100%;
                             }
                        }
                     } 
@@ -170,6 +170,7 @@ main {
         @keyframes navi {
             0% { height: 3em; }
         }
+
         .navigation-container {
             .navigation-logo {
                 order: 1;
@@ -179,6 +180,7 @@ main {
                 top: 0;
                 left: 0;
                 right: 0;
+
                 ul {
                     height: 100vh;
                     z-index: 101;
@@ -204,6 +206,24 @@ main {
                             position: absolute;
                             top: 0;
                             right: 0;
+                        }
+
+                        a {
+                            .bars {
+                                align-content: center;
+                                transform: rotate(45deg);
+                                .bar {
+                                    &:nth-child(1n) {
+                                        transform: translateY(2px) rotate(90deg);
+                                    }
+                                    &:nth-child(2n) {
+                                        visibility: hidden;
+                                    }
+                                    &:nth-child(3n) {
+                                        transform: translateY(-2px);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
