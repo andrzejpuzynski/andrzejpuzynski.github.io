@@ -9,25 +9,6 @@
           rel="stylesheet">
     <script src="https://use.fontawesome.com/b21321acbe.js"></script>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function () {
-
-        $("a").on('click', function (event) {  // Add smooth scrolling to all links
-
-          if (this.hash !== "") { // Make sure this.hash has a value before overriding default behavior
-            event.preventDefault(); // Prevent default anchor click behavior
-            var hash = this.hash; // Store hash
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top,
-            }, 1000, function () {
-              window.location.hash = hash; // Add hash (#) to URL when done scrolling (default click behavior)
-            });
-          } // End if
-
-        });
-      });
-    </script>
 </head>
 
 <body data-spy="scroll">

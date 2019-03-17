@@ -9,6 +9,7 @@
 //RWD
 @desktop: ~"only screen and (min-width: 992px)";
 
+
 * {
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -19,9 +20,11 @@
 
 html {
     font-size: 40%;
+    scroll-behavior: auto;
 
     @media @desktop {
         font-size: 50%;
+        scroll-behavior: smooth;
     }
 }
 
