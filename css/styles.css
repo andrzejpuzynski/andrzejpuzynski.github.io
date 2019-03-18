@@ -153,6 +153,7 @@ main {
 }
 .navigation.mobile .navigation-container .navigation-buttons ul li:not(:last-child) {
   order: 3;
+  font-size: 2em;
   color: red;
   width: 100%;
   display: block;
@@ -282,7 +283,7 @@ main {
 .about-me .about-me-skills div a img {
   margin-top: 0.3em;
   margin-bottom: 0.5em;
-  width: 400px;
+  width: 100%;
 }
 @media only screen and (min-width: 992px) {
   .about-me .about-me-skills div a img {
